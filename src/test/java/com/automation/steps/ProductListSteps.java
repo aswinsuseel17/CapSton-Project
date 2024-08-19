@@ -28,4 +28,13 @@ public class ProductListSteps {
         Assert.assertTrue(productListPage.isProductListPageDisplayed());
     }
 
+    @When("user selects filter by brand {string}")
+    public void userSelectsFilterByBrand(String key) throws InterruptedException {
+        productListPage.addBrandFilter(ConfigReader.getConfigValue(key));
+    }
+
+    @Then("verify filter {string} is applied")
+    public void verifyFilterIsApplied(String key) {
+        Assert.assertTrue(productListPage.isBrandFilterApplied(ConfigReader.getConfigValue(key)));
+    }
 }

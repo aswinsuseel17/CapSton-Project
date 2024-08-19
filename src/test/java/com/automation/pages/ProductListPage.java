@@ -1,6 +1,7 @@
 package com.automation.pages;
 
 import com.automation.utils.ConfigReader;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,5 +45,27 @@ public class ProductListPage extends BasePage{
     WebElement headsetPageHeading;
     public boolean isItemHeadingDisplayed(String product){
         return headsetPageHeading.getText().contains(product);
+    }
+
+    @FindBy(xpath = "//div[text()='Brand']/following-sibling::div")
+    WebElement plusIconBrand;
+    @FindBy(xpath = "//input[@placeholder='Search by brands']")
+    WebElement brandInput;
+    public void addBrandFilter(String brand) throws InterruptedException {
+        plusIconBrand.click();
+        brandInput.sendKeys(brand);
+        driver.findElement(By.xpath("//div[text()='"+brand+"']")).click();
+        Thread.sleep(3000);
+    }
+
+    @FindBy(xpath = "//div[@class='ProductDescription__header']")
+    List<WebElement> brandProductHeaderList;
+    public boolean isBrandFilterApplied(String productName){
+        for(WebElement product : brandProductHeaderList){
+            if(!product.getText().equals(productName)){
+                return false;
+            }
+        }
+        return true;
     }
 }
