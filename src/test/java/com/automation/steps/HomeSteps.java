@@ -27,4 +27,9 @@ public class HomeSteps {
         homePage.searchCategory();
     }
 
+    @When("user search an item in search bar")
+    public void userSearchAnItemInSearchBar() {
+        homePage.searchItem();
+    }
+
 }

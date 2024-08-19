@@ -41,7 +41,13 @@ public class ProductListPage extends BasePage{
 
     @FindBy(xpath = "//div[@class='Plp__headerHeading']/h1")
     WebElement listPageHeading;
-    public boolean ProductListPageHeading(){
+    public boolean shirtListPageHeading(){
         return listPageHeading.getText().contains("shirts");
+    }
+
+    @FindBy(className = "Plp__camelCase")
+    WebElement headsetPageHeading;
+    public boolean isHeadsetListPageDisplayed(){
+        return headsetPageHeading.getText().contains("Headset");
     }
 }

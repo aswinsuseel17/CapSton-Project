@@ -26,7 +26,13 @@ public class ProductListSteps {
 
     @Then("verify product listing page is displayed")
     public void verifyProductListingPageIsDisplayed() {
-        Assert.assertTrue(productListPage.ProductListPageHeading());
+        Assert.assertTrue(productListPage.shirtListPageHeading());
+        Assert.assertTrue(productListPage.isProductListPageDisplayed());
+    }
+
+    @Then("verify headset listing page is displayed")
+    public void verifyHeadsetListingPageIsDisplayed() {
+        Assert.assertTrue(productListPage.isHeadsetListPageDisplayed());
         Assert.assertTrue(productListPage.isProductListPageDisplayed());
     }
 

@@ -52,4 +52,14 @@ public class HomePage extends BasePage{
         actions.click(shirtsLink).build().perform();
     }
 
+
+    @FindBy(id = "search-text-input")
+    WebElement searchBox;
+    @FindBy(xpath = "//span[@class='SearchResultItem__bolder' and text()='headset']")
+    WebElement searchItem;
+    public void searchItem(){
+        searchBox.sendKeys("Headsets");
+        searchItem.click();
+    }
+
 }
