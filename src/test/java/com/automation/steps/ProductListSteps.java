@@ -2,6 +2,7 @@ package com.automation.steps;
 
 import com.automation.pages.ProductListPage;
 import com.automation.utils.ConfigReader;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -26,6 +27,16 @@ public class ProductListSteps {
     public void verifyHeadsetListingPageIsDisplayed(String key) {
         Assert.assertTrue(productListPage.isItemHeadingDisplayed(ConfigReader.getConfigValue(key)));
         Assert.assertTrue(productListPage.isProductListPageDisplayed());
+    }
+
+    @And("user sort price high to low")
+    public void userSortPriceHighToLow() throws InterruptedException {
+        productListPage.sortPriceHighToLow();
+    }
+
+    @Then("verify whether product list is sorted")
+    public void verifyWhetherProductListIsSorted() {
+        Assert.assertTrue(productListPage.isPriceHighToLowSorted());
     }
 
 }

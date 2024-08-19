@@ -4,18 +4,21 @@ import com.automation.utils.ConfigReader;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
 public class ProductListPage extends BasePage{
 
     @FindBy(css = ".SelectBoxDesktop__boxIconLeft")
-    WebElement sortByBtn;
+    WebElement sortByText;
     @FindBy(className = "FilterDesktop__filterClearTxt1")
     WebElement filterOptn;
     public boolean isProductListPageDisplayed(){
-        return sortByBtn.isDisplayed() && filterOptn.isDisplayed();
+        return sortByText.isDisplayed() && filterOptn.isDisplayed();
     }
 
     @FindBy(tagName = "h1")
@@ -44,5 +47,32 @@ public class ProductListPage extends BasePage{
     WebElement headsetPageHeading;
     public boolean isItemHeadingDisplayed(String product){
         return headsetPageHeading.getText().contains(product);
+    }
+
+    @FindBy(className = "SelectBoxDesktop__hideSelect")
+    WebElement sortByBtn;
+    public void sortPriceHighToLow() throws InterruptedException {
+        Select sortBy = new Select(sortByBtn);
+        sortBy.selectByValue("price-desc");
+        Thread.sleep(2000);
+    }
+
+    @FindBy(xpath = "//div[@class='ProductDescription__discount ProductDescription__priceHolder']/h3")
+    List<WebElement> priceList;
+    public boolean isPriceHighToLowSorted(){
+
+        List<Long> newPriceList = new ArrayList<>();
+
+        for(WebElement price : priceList){
+            String str = price.getText();
+            newPriceList.add(Long.valueOf(str.substring(1)));
+
+        }
+        List<Long> copyPriceList = new ArrayList<>(newPriceList);
+        Collections.sort(copyPriceList);
+        Collections.reverse(copyPriceList);
+
+        return newPriceList.equals(copyPriceList);
+
     }
 }
