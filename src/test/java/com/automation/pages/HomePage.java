@@ -57,8 +57,8 @@ public class HomePage extends BasePage{
     WebElement searchBox;
     @FindBy(xpath = "//span[@class='SearchResultItem__bolder' and text()='headset']")
     WebElement searchItem;
-    public void searchItem(){
-        searchBox.sendKeys("Headsets");
+    public void searchItem(String item){
+        searchBox.sendKeys(item);
         searchItem.click();
     }
 
