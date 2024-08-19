@@ -38,4 +38,18 @@ public class HomePage extends BasePage{
 
     }
 
+
+    @FindBy(xpath = "//div[@class='DesktopHeader__categoryAndBrand' and text()='Categories']")
+    WebElement categoryMenu;
+    @FindBy(xpath = "//div[text()=\"Men's Fashion\"]")
+    WebElement mensFashionOption;
+    @FindBy(xpath = "//a[text()='Shirts']")
+    WebElement shirtsLink;
+    public void searchCategory(){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(categoryMenu).pause(1000).build().perform();
+        actions.moveToElement(mensFashionOption).pause(1000).build().perform();
+        actions.click(shirtsLink).build().perform();
+    }
+
 }

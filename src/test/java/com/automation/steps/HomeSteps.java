@@ -22,4 +22,9 @@ public class HomeSteps {
         homePage.chooseBrand();
     }
 
+    @When("user select Shirts from Men's fashion in Categories")
+    public void userSelectShirtsFromMensSFashionInCategories() {
+        homePage.searchCategory();
+    }
+
 }

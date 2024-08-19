@@ -24,4 +24,10 @@ public class ProductListSteps {
         productListPage.clickFirstProduct();
     }
 
+    @Then("verify product listing page is displayed")
+    public void verifyProductListingPageIsDisplayed() {
+        Assert.assertTrue(productListPage.ProductListPageHeading());
+        Assert.assertTrue(productListPage.isProductListPageDisplayed());
+    }
+
 }

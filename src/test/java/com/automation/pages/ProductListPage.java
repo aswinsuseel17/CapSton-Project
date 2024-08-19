@@ -38,4 +38,10 @@ public class ProductListPage extends BasePage{
             }
         }
     }
+
+    @FindBy(xpath = "//div[@class='Plp__headerHeading']/h1")
+    WebElement listPageHeading;
+    public boolean ProductListPageHeading(){
+        return listPageHeading.getText().contains("shirts");
+    }
 }
