@@ -76,4 +76,26 @@ public class ProductListPage extends BasePage{
         return newPriceList.equals(copyPriceList);
 
     }
+
+    @FindBy(xpath = "//div[text()='Brand']/following-sibling::div")
+    WebElement plusIconBrand;
+    @FindBy(xpath = "//input[@placeholder='Search by brands']")
+    WebElement brandInput;
+    public void addBrandFilter(String brand) throws InterruptedException {
+        plusIconBrand.click();
+        brandInput.sendKeys(brand);
+        driver.findElement(By.xpath("//div[text()='"+brand+"']")).click();
+        Thread.sleep(3000);
+    }
+
+    @FindBy(xpath = "//div[@class='ProductDescription__header']")
+    List<WebElement> brandProductHeaderList;
+    public boolean isBrandFilterApplied(String productName){
+        for(WebElement product : brandProductHeaderList){
+            if(!product.getText().equals(productName)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
