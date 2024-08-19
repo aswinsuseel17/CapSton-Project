@@ -3,3 +3,4 @@ Feature: Validate filter functionality
     Given user opens website
     Then verify user is on homepage
     When user search an item "search.item" in search bar
+    Then verify headset listing page is displayed

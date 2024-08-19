@@ -20,8 +20,8 @@ public class ProductListPage extends BasePage{
 
     @FindBy(tagName = "h1")
     WebElement headingText;
-    public boolean isAdidasListPageDisplayed(){
-        return headingText.getText().contains("Adidas");
+    public boolean isListPageHeadingDisplayed(String product){
+        return headingText.getText().contains(product);
     }
 
     @FindBy(xpath = "//div[@class='ProductModule__content']/div/div/h2")
@@ -39,11 +39,6 @@ public class ProductListPage extends BasePage{
         }
     }
 
-    @FindBy(xpath = "//div[@class='Plp__headerHeading']/h1")
-    WebElement listPageHeading;
-    public boolean shirtListPageHeading(){
-        return listPageHeading.getText().contains("shirts");
-    }
 
     @FindBy(className = "Plp__camelCase")
     WebElement headsetPageHeading;

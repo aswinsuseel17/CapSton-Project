@@ -55,11 +55,10 @@ public class HomePage extends BasePage{
 
     @FindBy(id = "search-text-input")
     WebElement searchBox;
-    @FindBy(xpath = "//span[@class='SearchResultItem__bolder' and text()='headset']")
-    WebElement searchItem;
     public void searchItem(String item){
         searchBox.sendKeys(item);
-        searchItem.click();
+        Actions action = new Actions(driver);
+        action.keyDown(Keys.ENTER).keyUp(Keys.ENTER).build().perform();
     }
 
 }

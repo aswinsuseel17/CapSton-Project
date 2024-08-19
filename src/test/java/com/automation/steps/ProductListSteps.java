@@ -4,18 +4,14 @@ import com.automation.pages.ProductListPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
 
 public class ProductListSteps {
     ProductListPage productListPage = new ProductListPage();
 
-    @Then("verify whether product list page is displayed")
-    public void verifyWhetherProductListPageIsDisplayed() {
+    @Then("verify whether product {string} list page is displayed")
+    public void verifyWhetherProductListPageIsDisplayed(String product) {
         Assert.assertTrue(productListPage.isProductListPageDisplayed());
-        Assert.assertTrue(productListPage.isAdidasListPageDisplayed());
+        Assert.assertTrue(productListPage.isListPageHeadingDisplayed(product));
     }
 
 
@@ -24,11 +20,6 @@ public class ProductListSteps {
         productListPage.clickFirstProduct();
     }
 
-    @Then("verify product listing page is displayed")
-    public void verifyProductListingPageIsDisplayed() {
-        Assert.assertTrue(productListPage.shirtListPageHeading());
-        Assert.assertTrue(productListPage.isProductListPageDisplayed());
-    }
 
     @Then("verify headset listing page is displayed")
     public void verifyHeadsetListingPageIsDisplayed() {
