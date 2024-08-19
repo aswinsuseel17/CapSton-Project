@@ -22,6 +22,6 @@ Feature: Validate Brand Selection functionality
 
   Scenario: Verify user can search an item
     When user search an item "search.item" in search bar
-    Then verify headset listing page is displayed
+    Then verify "search.item" listing page is displayed
     When user clicks on the first product
     Then verify whether product detail page is displayed

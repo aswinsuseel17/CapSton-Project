@@ -42,7 +42,7 @@ public class ProductListPage extends BasePage{
 
     @FindBy(className = "Plp__camelCase")
     WebElement headsetPageHeading;
-    public boolean isHeadsetListPageDisplayed(){
-        return headsetPageHeading.getText().contains("Headset");
+    public boolean isItemHeadingDisplayed(String product){
+        return headsetPageHeading.getText().contains(product);
     }
 }

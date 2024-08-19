@@ -1,6 +1,7 @@
 package com.automation.steps;
 
 import com.automation.pages.ProductListPage;
+import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -21,9 +22,9 @@ public class ProductListSteps {
     }
 
 
-    @Then("verify headset listing page is displayed")
-    public void verifyHeadsetListingPageIsDisplayed() {
-        Assert.assertTrue(productListPage.isHeadsetListPageDisplayed());
+    @Then("verify {string} listing page is displayed")
+    public void verifyHeadsetListingPageIsDisplayed(String key) {
+        Assert.assertTrue(productListPage.isItemHeadingDisplayed(ConfigReader.getConfigValue(key)));
         Assert.assertTrue(productListPage.isProductListPageDisplayed());
     }
 
