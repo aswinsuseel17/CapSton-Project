@@ -1,4 +1,4 @@
-Feature: Validate add to cart functionality
+Feature: Validate cart page functionality
   Background:
     Given user opens website
     Then verify user is on homepage
@@ -18,3 +18,9 @@ Feature: Validate add to cart functionality
   Scenario: Verify user can alter quantity and size from the cart
     When user changes the size and quantity of the item
     Then verify the size "item.size" and quantity is updated
+
+  Scenario: Verify user can remove item from the cart
+    When user clicks on remove button
+    Then verify the item is removed from the cart
+    When user clicks continue shopping button
+    Then verify user is in home page

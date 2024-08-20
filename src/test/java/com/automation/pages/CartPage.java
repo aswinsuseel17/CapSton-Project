@@ -47,4 +47,21 @@ public class CartPage extends BasePage{
         }
         return true;
     }
+
+    @FindBy(xpath = "//div[text()='Remove']")
+    WebElement removeButton;
+    public void removeItem(){
+        removeButton.click();
+    }
+
+    @FindBy(className = "EmptyBag__headingText")
+    WebElement removeResponse;
+    public boolean isItemRemoved(){
+        return removeResponse.getText().equals("Your bag is empty! Let’s fill it up shall we?");
+    }
+    @FindBy(xpath = "//span[text()='Continue Shopping']")
+    WebElement continueShoppingButton;
+    public void clickContinueShopping(){
+        continueShoppingButton.click();
+    }
 }

@@ -30,4 +30,19 @@ public class CartSteps {
     public void verifyUserIsOnCartPage() {
         Assert.assertTrue(cartPage.isCartPageDisplayed());
     }
+
+    @When("user clicks on remove button")
+    public void userClicksOnRemoveButton() {
+        cartPage.removeItem();
+    }
+
+    @Then("verify the item is removed from the cart")
+    public void verifyTheItemIsRemovedFromTheCart() {
+        Assert.assertTrue(cartPage.isItemRemoved());
+    }
+
+    @When("user clicks continue shopping button")
+    public void userClicksContinueShoppingButton() {
+        cartPage.clickContinueShopping();
+    }
 }

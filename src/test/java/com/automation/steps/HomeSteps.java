@@ -34,4 +34,8 @@ public class HomeSteps {
     }
 
 
+    @Then("verify user is in home page")
+    public void verifyUserIsInHomePage() {
+        homePage.isHomePageDisplayed();
+    }
 }
