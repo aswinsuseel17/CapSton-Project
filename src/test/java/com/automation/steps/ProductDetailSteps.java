@@ -29,4 +29,9 @@ public class ProductDetailSteps {
     public void userClickCartIcon() {
         productDetailPage.clickCartIcon();
     }
+
+    @And("user selects size {string} of the product")
+    public void userSelectsSizeOfTheProduct(String key) {
+        productDetailPage.selectSize(key);
+    }
 }

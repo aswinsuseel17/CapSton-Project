@@ -4,6 +4,8 @@ import com.automation.utils.ConfigReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class ProductDetailPage extends BasePage{
     @FindBy(xpath = "//div[@itemprop='name']")
     WebElement productName;
@@ -11,7 +13,7 @@ public class ProductDetailPage extends BasePage{
         return productName.getText().equals(ConfigReader.getConfigValue("product.name"));
     }
 
-    @FindBy(xpath = "//span[text()='ADD TO BAG']")
+    @FindBy(xpath = "//button[text()='Add To Bag']")
     WebElement addToCartBtn;
     public void clickAddToCart(){
         addToCartBtn.click();
@@ -25,6 +27,13 @@ public class ProductDetailPage extends BasePage{
 
     public void clickCartIcon(){
         cartCount.click();
+    }
+
+    @FindBy(xpath = "//div[@class='SizeSelectNewPdp__base']/div/div")
+    List<WebElement> sizeList;
+    public void selectSize(String key){
+        sizeList.get(0).click();
+        ConfigReader.setConfigValue(key,sizeList.get(0).getText());
     }
 
 }
