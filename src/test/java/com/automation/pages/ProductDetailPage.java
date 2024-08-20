@@ -1,6 +1,7 @@
 package com.automation.pages;
 
 import com.automation.utils.ConfigReader;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -34,6 +35,19 @@ public class ProductDetailPage extends BasePage{
     public void selectSize(String key){
         sizeList.get(0).click();
         ConfigReader.setConfigValue(key,sizeList.get(0).getText());
+    }
+
+    @FindBy(className = "ProductDescriptionPage__moreProductInfoHead")
+    WebElement moreProductInfo;
+    public void clickMoreProductInfo(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();",moreProductInfo);
+    }
+
+    @FindBy(css = ".MoreProductInfoComponent__header")
+    WebElement productInfoHeading;
+    public boolean isProductInfoDisplayed(){
+        return productInfoHeading.isDisplayed();
     }
 
 }

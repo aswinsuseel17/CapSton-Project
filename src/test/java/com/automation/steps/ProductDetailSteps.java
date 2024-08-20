@@ -3,6 +3,7 @@ package com.automation.steps;
 import com.automation.pages.ProductDetailPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class ProductDetailSteps {
@@ -33,5 +34,15 @@ public class ProductDetailSteps {
     @And("user selects size {string} of the product")
     public void userSelectsSizeOfTheProduct(String key) {
         productDetailPage.selectSize(key);
+    }
+
+    @When("user clicks more product info")
+    public void userClicksMoreProductInfo() {
+        productDetailPage.clickMoreProductInfo();
+    }
+
+    @Then("verify product info is displayed")
+    public void verifyProductInfoIsDisplayed() {
+        Assert.assertTrue(productDetailPage.isProductInfoDisplayed());
     }
 }
