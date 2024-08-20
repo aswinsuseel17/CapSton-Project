@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.pages.WebSite.ProductListPage;
+import com.automation.pages.website.ProductListPage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -47,5 +47,10 @@ public class ProductListSteps {
     @Then("verify filter {string} is applied")
     public void verifyFilterIsApplied(String key) {
         Assert.assertTrue(productListPage.isBrandFilterApplied(ConfigReader.getConfigValue(key)));
+    }
+
+    @Then("verify similar products listing page is displayed")
+    public void verifySimilarProductsListingPageIsDisplayed() {
+        Assert.assertTrue(productListPage.isSimilarProductsDisplayed());
     }
 }

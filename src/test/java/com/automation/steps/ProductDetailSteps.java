@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.pages.WebSite.ProductDetailPage;
+import com.automation.pages.website.ProductDetailPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -50,5 +50,16 @@ public class ProductDetailSteps {
     public void userClicksVisitStoreButton() {
         productDetailPage.clickVisitStore();
     }
+
+    @When("user clicks similar products icon from product image")
+    public void userClicksSimilarProductsIconFromProductImage() {
+        productDetailPage.clickSimilarProductsIcon();
+    }
+
+    @And("click view all products button")
+    public void clickViewAllProductsButton() {
+        productDetailPage.clickViewAllProducts();
+    }
+
 
 }

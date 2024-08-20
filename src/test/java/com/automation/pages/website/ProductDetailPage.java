@@ -1,4 +1,4 @@
-package com.automation.pages.WebSite;
+package com.automation.pages.website;
 
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.WebElement;
@@ -55,5 +55,17 @@ public class ProductDetailPage extends BasePage {
     public void clickVisitStore(){
         ConfigReader.setConfigValue("brand.name",brandName.getText());
         javascriptExecutorClick(visitStoreBtn);
+    }
+
+    @FindBy(id = "pg-similar-icon")
+    WebElement similarProductsIcon;
+    public void clickSimilarProductsIcon(){
+        similarProductsIcon.click();
+    }
+
+    @FindBy(className = "CarouselWithControls__viewAllBtn")
+    WebElement viewAllProductsBtn;
+    public void clickViewAllProducts(){
+        viewAllProductsBtn.click();
     }
 }
