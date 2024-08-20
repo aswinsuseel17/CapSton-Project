@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.pages.HomePage;
+import com.automation.pages.WebSite.HomePage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
