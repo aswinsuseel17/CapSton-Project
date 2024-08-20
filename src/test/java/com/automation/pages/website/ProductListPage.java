@@ -1,5 +1,7 @@
-package com.automation.pages.WebSite;
+package com.automation.pages.website;
 
+
+import com.automation.pages.website.BasePage;
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
