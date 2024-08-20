@@ -56,4 +56,16 @@ public class ProductDetailPage extends BasePage {
         ConfigReader.setConfigValue("brand.name",brandName.getText());
         javascriptExecutorClick(visitStoreBtn);
     }
+
+    @FindBy(id = "pg-similar-icon")
+    WebElement similarProductsIcon;
+    public void clickSimilarProductsIcon(){
+        similarProductsIcon.click();
+    }
+
+    @FindBy(className = "CarouselWithControls__viewAllBtn")
+    WebElement viewAllProductsBtn;
+    public void clickViewAllProducts(){
+        viewAllProductsBtn.click();
+    }
 }

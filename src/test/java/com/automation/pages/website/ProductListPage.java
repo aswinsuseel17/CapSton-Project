@@ -1,4 +1,4 @@
-package com.automation.pages.website;
+package com.automation.pages.WebSite;
 
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
@@ -116,5 +116,11 @@ public class ProductListPage extends BasePage {
             }
         }
         return widthValue.equals("33.33%");
+    }
+
+    @FindBy(css = ".rplp__rplpHead")
+    WebElement similarProductsHeading;
+    public boolean isSimilarProductsDisplayed(){
+        return similarProductsHeading.isDisplayed();
     }
 }

@@ -51,4 +51,15 @@ public class ProductDetailSteps {
         productDetailPage.clickVisitStore();
     }
 
+    @When("user clicks similar products icon from product image")
+    public void userClicksSimilarProductsIconFromProductImage() {
+        productDetailPage.clickSimilarProductsIcon();
+    }
+
+    @And("click view all products button")
+    public void clickViewAllProductsButton() {
+        productDetailPage.clickViewAllProducts();
+    }
+
+
 }
