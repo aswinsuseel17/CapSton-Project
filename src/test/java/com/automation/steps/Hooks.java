@@ -17,6 +17,6 @@ public class Hooks {
     @After
     public void tearDown(Scenario scenario){
         ReportManager.attachScreenshot(scenario);
-//        DriverManager.getDriver().quit();
+        DriverManager.getDriver().quit();
     }
 }

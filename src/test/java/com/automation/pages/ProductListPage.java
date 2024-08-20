@@ -32,8 +32,7 @@ public class ProductListPage extends BasePage{
     List<WebElement> productList;
     public void clickFirstProduct(){
         ConfigReader.setConfigValue("product.name",productList.get(0).getText());
-        JavascriptExecutor javascriptExecutor=(JavascriptExecutor)driver;
-        javascriptExecutor.executeScript("arguments[0].click();",productList.get(0));
+        javascriptExecuteClick(productList.get(0));
         String currentWindow = driver.getWindowHandle();
         Set<String> windowHandles = driver.getWindowHandles();
         for(String handle : windowHandles){

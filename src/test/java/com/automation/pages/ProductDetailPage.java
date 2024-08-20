@@ -40,8 +40,7 @@ public class ProductDetailPage extends BasePage{
     @FindBy(className = "ProductDescriptionPage__moreProductInfoHead")
     WebElement moreProductInfo;
     public void clickMoreProductInfo(){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();",moreProductInfo);
+        javascriptExecuteClick(moreProductInfo);
     }
 
     @FindBy(css = ".MoreProductInfoComponent__header")
