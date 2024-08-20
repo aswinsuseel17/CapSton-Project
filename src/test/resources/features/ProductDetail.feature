@@ -11,3 +11,7 @@ Feature: Validate product detail page functionalities
   Scenario: Verify user can see more product info
     When user clicks more product info
     Then verify product info is displayed
+
+    Scenario: Verify user can visit store
+      When user clicks visit store button
+      Then verify whether product "brand.name" list page is displayed

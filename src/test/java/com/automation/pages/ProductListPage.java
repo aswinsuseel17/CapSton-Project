@@ -25,14 +25,14 @@ public class ProductListPage extends BasePage{
     @FindBy(tagName = "h1")
     WebElement headingText;
     public boolean isListPageHeadingDisplayed(String product){
-        return headingText.getText().contains(product);
+        return headingText.getText().toLowerCase().contains(product.toLowerCase());
     }
 
     @FindBy(xpath = "//div[@class='ProductModule__content']/div/div/h2")
     List<WebElement> productList;
     public void clickFirstProduct(){
         ConfigReader.setConfigValue("product.name",productList.get(0).getText());
-        javascriptExecuteClick(productList.get(0));
+        javascriptExecutorClick(productList.get(0));
         String currentWindow = driver.getWindowHandle();
         Set<String> windowHandles = driver.getWindowHandles();
         for(String handle : windowHandles){

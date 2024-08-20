@@ -45,4 +45,10 @@ public class ProductDetailSteps {
     public void verifyProductInfoIsDisplayed() {
         Assert.assertTrue(productDetailPage.isProductInfoDisplayed());
     }
+
+    @When("user clicks visit store button")
+    public void userClicksVisitStoreButton() {
+        productDetailPage.clickVisitStore();
+    }
+
 }
