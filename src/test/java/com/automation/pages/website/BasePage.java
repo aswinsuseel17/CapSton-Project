@@ -1,4 +1,4 @@
-package com.automation.pages.WebSite;
+package com.automation.pages.website;
 
 import com.automation.utils.DriverManager;
 import org.openqa.selenium.JavascriptExecutor;

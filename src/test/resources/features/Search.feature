@@ -25,3 +25,9 @@ Feature: Validate Brand Selection functionality
     Then verify "search.item" listing page is displayed
     When user clicks on the first product
     Then verify whether product detail page is displayed
+
+  Scenario: Verify user can switch between different views
+    When user search an item "search.item" in search bar
+    Then verify "search.item" listing page is displayed
+    When user clicks on the view icon
+    Then verify view has changed

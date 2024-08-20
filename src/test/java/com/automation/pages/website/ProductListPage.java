@@ -1,4 +1,4 @@
-package com.automation.pages.WebSite;
+package com.automation.pages.website;
 
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
@@ -95,5 +95,26 @@ public class ProductListPage extends BasePage {
             }
         }
         return true;
+    }
+    @FindBy(xpath = "//div[@class='Plp__icon']/div/div")
+    WebElement viewChangeButton;
+    public void changeView(){
+        viewChangeButton.click();
+    }
+    @FindBy(xpath = "//*[@id=\"grid-wrapper_desktop\"]/div/div/div/div/div[2]/div[1]")
+    WebElement viewElement;
+    public boolean isViewChanged(){
+        String style = viewElement.getAttribute("style");
+        String widthValue = null;
+        if (style != null) {
+            String[] styles = style.split(";");
+            for (String s : styles) {
+                if (s.trim().startsWith("width:")) {
+                    widthValue = s.split(":")[1].trim();
+                    break;
+                }
+            }
+        }
+        return widthValue.equals("33.33%");
     }
 }

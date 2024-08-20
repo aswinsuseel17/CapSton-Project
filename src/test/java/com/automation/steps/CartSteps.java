@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.pages.WebSite.CartPage;
+import com.automation.pages.website.CartPage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;

@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.pages.WebSite.ProductListPage;
+import com.automation.pages.website.ProductListPage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -47,5 +47,15 @@ public class ProductListSteps {
     @Then("verify filter {string} is applied")
     public void verifyFilterIsApplied(String key) {
         Assert.assertTrue(productListPage.isBrandFilterApplied(ConfigReader.getConfigValue(key)));
+    }
+
+    @When("user clicks on the view icon")
+    public void userClicksOnTheViewIcon() {
+        productListPage.changeView();
+    }
+
+    @Then("verify view has changed")
+    public void verifyViewHasChanged() {
+        Assert.assertTrue(productListPage.isViewChanged());
     }
 }
