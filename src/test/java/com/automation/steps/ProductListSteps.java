@@ -11,9 +11,9 @@ public class ProductListSteps {
     ProductListPage productListPage = new ProductListPage();
 
     @Then("verify whether product {string} list page is displayed")
-    public void verifyWhetherProductListPageIsDisplayed(String product) {
+    public void verifyWhetherProductListPageIsDisplayed(String key) {
         Assert.assertTrue(productListPage.isProductListPageDisplayed());
-        Assert.assertTrue(productListPage.isListPageHeadingDisplayed(product));
+        Assert.assertTrue(productListPage.isListPageHeadingDisplayed(ConfigReader.getConfigValue(key)));
     }
 
 

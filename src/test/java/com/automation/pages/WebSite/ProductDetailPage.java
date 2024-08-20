@@ -39,7 +39,7 @@ public class ProductDetailPage extends BasePage {
     @FindBy(className = "ProductDescriptionPage__moreProductInfoHead")
     WebElement moreProductInfo;
     public void clickMoreProductInfo(){
-        javascriptExecuteClick(moreProductInfo);
+        javascriptExecutorClick(moreProductInfo);
     }
 
     @FindBy(css = ".MoreProductInfoComponent__header")
@@ -48,4 +48,12 @@ public class ProductDetailPage extends BasePage {
         return productInfoHeading.isDisplayed();
     }
 
+    @FindBy(className = "ProductDescriptionPage__visitStore")
+    WebElement visitStoreBtn;
+    @FindBy(xpath = "//button[@class='ProductDescriptionPage__visitStore']/preceding-sibling::div[2]")
+    WebElement brandName;
+    public void clickVisitStore(){
+        ConfigReader.setConfigValue("brand.name",brandName.getText());
+        javascriptExecutorClick(visitStoreBtn);
+    }
 }
