@@ -1,12 +1,25 @@
 package com.automation.steps;
 
-import com.automation.pages.website.HomePage;
+import com.automation.pages.interfaces.HomePage;
+import com.automation.pages.mobileApplication.MobileHomePage;
+import com.automation.pages.website.WebHomePage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 
 public class HomeSteps {
-    HomePage homePage = new HomePage();
+    HomePage homePage ;
+
+    public HomeSteps(){
+        if(ConfigReader.getConfigValue("platform").equals("Web")){
+            homePage=new WebHomePage();
+        }
+        else{
+            homePage = new MobileHomePage();
+        }
+    }
+
+
     @Given("user opens website")
     public void user_opens_website() {
         homePage.openWebsite();

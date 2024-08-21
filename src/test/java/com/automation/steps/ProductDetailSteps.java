@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.pages.website.ProductDetailPage;
+import com.automation.pages.website.WebProductDetailPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,7 +8,7 @@ import org.junit.Assert;
 
 public class ProductDetailSteps {
 
-    ProductDetailPage productDetailPage = new ProductDetailPage();
+    WebProductDetailPage productDetailPage = new WebProductDetailPage();
 
     @Then("verify whether product detail page is displayed")
     public void verifyWhetherProductDetailPageIsDisplayed() {
@@ -32,8 +32,9 @@ public class ProductDetailSteps {
     }
 
     @And("user selects size {string} of the product")
-    public void userSelectsSizeOfTheProduct(String key) {
+    public void userSelectsSizeOfTheProduct(String key) throws InterruptedException {
         productDetailPage.selectSize(key);
+        Thread.sleep(3000); //Due to the behaviour of the page
     }
 
     @When("user clicks more product info")

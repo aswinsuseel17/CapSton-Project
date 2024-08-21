@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+    
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+              <th>Number</th>
+            <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>CucumberAutomation</td>
+              <td>1</td>
+            <td>21 Aug 2024, 15:09</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+      </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+          <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+      </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Duration</th>
+            <th>Average</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+                      <tr>
+              <td class="location">com.automation.steps.CartSteps.userChangesTheSizeAndQuantityOfTheItem()</td>
+              <td>1</td>
+              <td class="duration" data-value="4757291500">4s 757ms</td>
+              <td class="duration" data-value="4757291500">4s 757ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.CartSteps.userClicksContinueShoppingButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="203738000">203ms</td>
+              <td class="duration" data-value="203738000">203ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.CartSteps.userClicksOnRemoveButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="160284200">160ms</td>
+              <td class="duration" data-value="160284200">160ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.CartSteps.verifyCartContainTheCorrectItem()</td>
+              <td>1</td>
+              <td class="duration" data-value="56362300">056ms</td>
+              <td class="duration" data-value="56362300">056ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.CartSteps.verifyTheItemIsRemovedFromTheCart()</td>
+              <td>1</td>
+              <td class="duration" data-value="1481526600">1s 481ms</td>
+              <td class="duration" data-value="1481526600">1s 481ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.CartSteps.verifyTheSizeNadQuantityIsUpdated(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="158793800">158ms</td>
+              <td class="duration" data-value="158793800">158ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.CartSteps.verifyUserIsOnCartPage()</td>
+              <td>3</td>
+              <td class="duration" data-value="4781091400">4s 781ms</td>
+              <td class="duration" data-value="1593697133">1s 593ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSearchAnItemInSearchBar(java.lang.String)</td>
+              <td>10</td>
+              <td class="duration" data-value="3986981400">3s 986ms</td>
+              <td class="duration" data-value="398698140">398ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectShirtsFromMensSFashionInCategories()</td>
+              <td>1</td>
+              <td class="duration" data-value="2743613000">2s 743ms</td>
+              <td class="duration" data-value="2743613000">2s 743ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectsAdidasFromFootwearInBrandsMenu()</td>
+              <td>1</td>
+              <td class="duration" data-value="2830797800">2s 830ms</td>
+              <td class="duration" data-value="2830797800">2s 830ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.user_opens_website()</td>
+              <td>12</td>
+              <td class="duration" data-value="109584779700">1m 49s 584ms</td>
+              <td class="duration" data-value="9132064975">9s 132ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verifyUserIsInHomePage()</td>
+              <td>1</td>
+              <td class="duration" data-value="2972144200">2s 972ms</td>
+              <td class="duration" data-value="2972144200">2s 972ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verify_user_is_on_homepage()</td>
+              <td>12</td>
+              <td class="duration" data-value="1434649800">1s 434ms</td>
+              <td class="duration" data-value="119554150">119ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</td>
+              <td>12</td>
+              <td class="duration" data-value="46079277500">46s 079ms</td>
+              <td class="duration" data-value="3839939791">3s 839ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.Hooks.tearDown(io.cucumber.java.Scenario)</td>
+              <td>12</td>
+              <td class="duration" data-value="19192163000">19s 192ms</td>
+              <td class="duration" data-value="1599346916">1s 599ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductDetailSteps.clickViewAllProductsButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="2720856300">2s 720ms</td>
+              <td class="duration" data-value="2720856300">2s 720ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductDetailSteps.userClickCartIcon()</td>
+              <td>3</td>
+              <td class="duration" data-value="557532900">557ms</td>
+              <td class="duration" data-value="185844300">185ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductDetailSteps.userClicksAddToCartButton()</td>
+              <td>3</td>
+              <td class="duration" data-value="865934300">865ms</td>
+              <td class="duration" data-value="288644766">288ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductDetailSteps.userClicksMoreProductInfo()</td>
+              <td>1</td>
+              <td class="duration" data-value="134910900">134ms</td>
+              <td class="duration" data-value="134910900">134ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductDetailSteps.userClicksSimilarProductsIconFromProductImage()</td>
+              <td>1</td>
+              <td class="duration" data-value="242436600">242ms</td>
+              <td class="duration" data-value="242436600">242ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductDetailSteps.userClicksVisitStoreButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="396340800">396ms</td>
+              <td class="duration" data-value="396340800">396ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductDetailSteps.userSelectsSizeOfTheProduct(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="12036961400">12s 036ms</td>
+              <td class="duration" data-value="4012320466">4s 012ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductDetailSteps.verifyCartCountIs(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="3280894400">3s 280ms</td>
+              <td class="duration" data-value="1093631466">1s 093ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductDetailSteps.verifyProductInfoIsDisplayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="519957600">519ms</td>
+              <td class="duration" data-value="519957600">519ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductDetailSteps.verifyWhetherProductDetailPageIsDisplayed()</td>
+              <td>9</td>
+              <td class="duration" data-value="54865535900">54s 865ms</td>
+              <td class="duration" data-value="6096170655">6s 096ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductListSteps.userClicksOnTheFirstProduct()</td>
+              <td>9</td>
+              <td class="duration" data-value="3557955600">3s 557ms</td>
+              <td class="duration" data-value="395328400">395ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductListSteps.userClicksOnTheViewIcon()</td>
+              <td>1</td>
+              <td class="duration" data-value="616861700">616ms</td>
+              <td class="duration" data-value="616861700">616ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductListSteps.userSelectsFilterByBrand(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="4937452500">4s 937ms</td>
+              <td class="duration" data-value="4937452500">4s 937ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductListSteps.userSortPriceHighToLow()</td>
+              <td>1</td>
+              <td class="duration" data-value="3481115500">3s 481ms</td>
+              <td class="duration" data-value="3481115500">3s 481ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductListSteps.verifyFilterIsApplied(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="285738900">285ms</td>
+              <td class="duration" data-value="285738900">285ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductListSteps.verifyHeadsetListingPageIsDisplayed(java.lang.String)</td>
+              <td>10</td>
+              <td class="duration" data-value="24362770400">24s 362ms</td>
+              <td class="duration" data-value="2436277040">2s 436ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductListSteps.verifySimilarProductsListingPageIsDisplayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="1136721400">1s 136ms</td>
+              <td class="duration" data-value="1136721400">1s 136ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductListSteps.verifyViewHasChanged()</td>
+              <td>1</td>
+              <td class="duration" data-value="98260100">098ms</td>
+              <td class="duration" data-value="98260100">098ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductListSteps.verifyWhetherProductListIsSorted()</td>
+              <td>1</td>
+              <td class="duration" data-value="1390511300">1s 390ms</td>
+              <td class="duration" data-value="1390511300">1s 390ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.ProductListSteps.verifyWhetherProductListPageIsDisplayed(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="9935170500">9s 935ms</td>
+              <td class="duration" data-value="3311723500">3s 311ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                  </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>35</td>
+            <td>125</td>
+            <td class="duration">5m 25s 847ms</td>
+            <td class="duration">2s 606ms</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

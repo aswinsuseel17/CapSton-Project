@@ -1,5 +1,6 @@
 package com.automation.pages.website;
 
+
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -11,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-public class ProductListPage extends BasePage {
+public class WebProductListPage extends WebBasePage {
 
     @FindBy(css = ".SelectBoxDesktop__boxIconLeft")
     WebElement sortByText;
