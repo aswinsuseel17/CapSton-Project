@@ -25,7 +25,12 @@ public class ProductListSteps {
 
     @Then("verify {string} listing page is displayed")
     public void verifyHeadsetListingPageIsDisplayed(String key) {
-        Assert.assertTrue(productListPage.isItemHeadingDisplayed(ConfigReader.getConfigValue(key)));
+        if(key.contains(".")) {
+            Assert.assertTrue(productListPage.isItemHeadingDisplayed(ConfigReader.getConfigValue(key)));
+        }
+        else{
+            Assert.assertTrue(productListPage.isItemHeadingDisplayed(key));
+        }
         Assert.assertTrue(productListPage.isProductListPageDisplayed());
     }
 

@@ -43,7 +43,12 @@ public class HomeSteps {
 
     @When("user search an item {string} in search bar")
     public void userSearchAnItemInSearchBar(String key) {
-        homePage.searchItem(ConfigReader.getConfigValue(key));
+        if(key.contains(".")) {
+            homePage.searchItem(ConfigReader.getConfigValue(key));
+        }
+        else{
+            homePage.searchItem(key);
+        }
     }
 
 
