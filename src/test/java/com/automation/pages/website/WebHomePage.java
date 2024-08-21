@@ -1,25 +1,30 @@
 package com.automation.pages.website;
 
+
+import com.automation.pages.interfaces.HomePage;
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends BasePage {
+public class WebHomePage extends WebBasePage implements HomePage {
 
+    @Override
     public void openWebsite(){
         driver.get(ConfigReader.getConfigValue("website.url"));
     }
 
     @FindBy(id = "wzrk-cancel")
     WebElement askMeLater;
+    @Override
     public void closePopUp(){
         askMeLater.click();
     }
 
     @FindBy(className = "BannerDesktop__base")
     WebElement bannerBase;
+    @Override
     public boolean isHomePageDisplayed(){
 
         return bannerBase.isDisplayed();
@@ -31,6 +36,7 @@ public class HomePage extends BasePage {
     WebElement footwearSelect;
     @FindBy(xpath = "(//div[@class='BrandImage__imageHolder']/div)[1]")
     WebElement adidasSelect;
+    @Override
     public void chooseBrand(){
         Actions action = new Actions(driver);
         action.moveToElement(brandsMenu).pause(1000).build().perform();
@@ -45,6 +51,7 @@ public class HomePage extends BasePage {
     WebElement mensFashionOption;
     @FindBy(xpath = "//a[text()='Shirts']")
     WebElement shirtsLink;
+    @Override
     public void searchCategory(){
         Actions actions = new Actions(driver);
         actions.moveToElement(categoryMenu).pause(1000).build().perform();
@@ -55,6 +62,7 @@ public class HomePage extends BasePage {
 
     @FindBy(id = "search-text-input")
     WebElement searchBox;
+    @Override
     public void searchItem(String item){
         searchBox.sendKeys(item);
         Actions action = new Actions(driver);

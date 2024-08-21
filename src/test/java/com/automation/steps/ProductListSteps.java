@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.pages.website.ProductListPage;
+import com.automation.pages.website.WebProductListPage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class ProductListSteps {
-    ProductListPage productListPage = new ProductListPage();
+    WebProductListPage productListPage = new WebProductListPage();
 
     @Then("verify whether product {string} list page is displayed")
     public void verifyWhetherProductListPageIsDisplayed(String key) {

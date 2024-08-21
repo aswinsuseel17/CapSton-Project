@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class ProductDetailPage extends BasePage {
+public class WebProductDetailPage extends WebBasePage {
     @FindBy(xpath = "//div[@itemprop='name']")
     WebElement productName;
     public boolean isTheClickedProductDisplayed(){

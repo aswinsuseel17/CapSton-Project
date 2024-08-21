@@ -1,6 +1,8 @@
 package com.automation.steps;
 
-import com.automation.pages.website.CartPage;
+import com.automation.pages.interfaces.CartPage;
+import com.automation.pages.mobileApplication.MobileCartPage;
+import com.automation.pages.website.WebCartPage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -9,7 +11,16 @@ import org.junit.Assert;
 
 public class CartSteps {
 
-    CartPage cartPage = new CartPage();
+    CartPage cartPage;
+
+    public CartSteps(){
+        if(ConfigReader.getConfigValue("platform").equals("Web")){
+            cartPage=new WebCartPage();
+        }
+        else{
+            cartPage = new MobileCartPage();
+        }
+    }
 
     @And("verify cart contain the correct item")
     public void verifyCartContainTheCorrectItem() {
