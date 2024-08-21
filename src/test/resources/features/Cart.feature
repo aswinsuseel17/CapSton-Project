@@ -1,4 +1,4 @@
-Feature: Validate cart page functionality
+Feature: Validate cart page functionalities
 
   Background:
     Given user opens website
