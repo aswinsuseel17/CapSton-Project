@@ -29,11 +29,11 @@ public class ProductDetailPage extends BasePage {
         cartCount.click();
     }
 
-    @FindBy(xpath = "//div[@class='SizeSelectNewPdp__base']/div/div")
+    @FindBy(xpath = "//div[@class='SizeSelectNewPdp__base']")
     List<WebElement> sizeList;
     public void selectSize(String key){
-        sizeList.get(0).click();
         ConfigReader.setConfigValue(key,sizeList.get(0).getText());
+        sizeList.get(0).click();
     }
 
     @FindBy(className = "ProductDescriptionPage__moreProductInfoHead")

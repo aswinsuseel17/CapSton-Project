@@ -6,7 +6,13 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 
 public class HomeSteps {
-    HomePage homePage = new HomePage();
+    HomePage homePage ;
+
+    public HomeSteps(){
+
+    }
+
+
     @Given("user opens website")
     public void user_opens_website() {
         homePage.openWebsite();

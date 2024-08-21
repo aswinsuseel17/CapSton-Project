@@ -32,8 +32,9 @@ public class ProductDetailSteps {
     }
 
     @And("user selects size {string} of the product")
-    public void userSelectsSizeOfTheProduct(String key) {
+    public void userSelectsSizeOfTheProduct(String key) throws InterruptedException {
         productDetailPage.selectSize(key);
+        Thread.sleep(3000); //Due to the behaviour of the page
     }
 
     @When("user clicks more product info")

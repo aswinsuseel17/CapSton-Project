@@ -39,10 +39,7 @@ public class CartPage extends BasePage {
     @FindBy(xpath = "//div[text()='Qty']/following-sibling::div/span")
     WebElement quantityCheck;
     public boolean verifySizeAndQuantityUpdated(String size){
-        if(sizeCheck.getText().equals(size)){
-            return false;
-        }
-        if(quantityCheck.getText().equals("1")){
+        if(sizeCheck.getText().equalsIgnoreCase(size) || quantityCheck.getText().equals("1")){
             return false;
         }
         return true;
