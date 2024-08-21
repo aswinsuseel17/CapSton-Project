@@ -11,7 +11,6 @@ Feature: Validate Brand Selection functionality
     When user clicks on the first product
     Then verify whether product detail page is displayed
 
-
   Scenario: Verify user csn select category from home page
 
     When user select Shirts from Men's fashion in Categories
@@ -19,14 +18,15 @@ Feature: Validate Brand Selection functionality
     When user clicks on the first product
     Then verify whether product detail page is displayed
 
-
   Scenario: Verify user can search an item
+
     When user search an item "search.item" in search bar
     Then verify "search.item" listing page is displayed
     When user clicks on the first product
     Then verify whether product detail page is displayed
 
   Scenario: Verify user can switch between different views
+
     When user search an item "search.item" in search bar
     Then verify "search.item" listing page is displayed
     When user clicks on the view icon

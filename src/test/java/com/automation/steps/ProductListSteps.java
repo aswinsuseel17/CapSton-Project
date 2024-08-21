@@ -63,4 +63,29 @@ public class ProductListSteps {
     public void verifySimilarProductsListingPageIsDisplayed() {
         Assert.assertTrue(productListPage.isSimilarProductsDisplayed());
     }
+
+    @When("user clicks give feedback button")
+    public void userClicksGiveFeedbackButton() {
+        productListPage.clickFeedBack();
+    }
+
+    @Then("verify feedback form is displayed")
+    public void verifyFeedbackFormIsDisplayed() {
+        Assert.assertTrue(productListPage.isFeedBackPageDisplayed());
+    }
+
+    @And("user enters feedback and click next")
+    public void userEntersFeedbackAndClickNext() {
+        productListPage.enterFeedBack();
+    }
+
+    @When("user enters text and clicks submit")
+    public void userEntersTextAndClicksSubmit() {
+        productListPage.submitFeedBack();
+    }
+
+    @Then("verify {string} is displayed")
+    public void verifyIsDisplayed(String text) {
+        Assert.assertEquals(text,productListPage.successMsg());
+    }
 }

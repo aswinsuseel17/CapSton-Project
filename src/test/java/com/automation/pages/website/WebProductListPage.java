@@ -124,4 +124,41 @@ public class WebProductListPage extends WebBasePage {
     public boolean isSimilarProductsDisplayed(){
         return similarProductsHeading.isDisplayed();
     }
+
+    @FindBy(xpath = "//div[@class='FeedbackExperienceWidget__line2']/strong")
+    WebElement giveFeedBackBtn;
+    public void clickFeedBack(){
+        giveFeedBackBtn.click();
+    }
+
+    @FindBy(css = ".FeedbackExperienceForm__next_box")
+    WebElement nextButton;
+    public boolean isFeedBackPageDisplayed(){
+        return nextButton.isDisplayed();
+    }
+
+    @FindBy(xpath = "//div[@class='FeedbackExperienceForm__emojis'][3]")
+    List<WebElement> feedBackSmiley;
+
+    public void enterFeedBack(){
+        for(WebElement smiley:feedBackSmiley){
+            smiley.click();
+        }
+        nextButton.click();
+    }
+
+    @FindBy(className = "FeedbackExperienceForm__feedback_box")
+    WebElement textInput;
+    @FindBy(xpath = "//div[text()='Submit']")
+    WebElement submitButton;
+    public void submitFeedBack(){
+        textInput.sendKeys(ConfigReader.getConfigValue("text"));
+        submitButton.click();
+    }
+
+    @FindBy(className = "feedbackExperienceSubmitMessage__thankyouText")
+    WebElement successMsg;
+    public String successMsg(){
+        return successMsg.getText();
+    }
 }
