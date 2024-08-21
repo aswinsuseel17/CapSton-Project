@@ -7,7 +7,6 @@ import org.junit.Assert;
 
 public class HomeSteps {
     HomePage homePage = new HomePage();
-
     @Given("user opens website")
     public void user_opens_website() {
         homePage.openWebsite();
