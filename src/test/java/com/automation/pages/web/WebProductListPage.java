@@ -76,14 +76,15 @@ public class WebProductListPage extends WebBasePage {
 
     }
 
-    @FindBy(xpath = "//div[text()='Brand']/following-sibling::div")
-    WebElement plusIconBrand;
+//    @FindBy(xpath = "//div[text()='Brand']/following-sibling::div")
+//    WebElement plusIconBrand;
+    String filterPlusIcon = "//div[text()='%s']/following-sibling::div";
     @FindBy(xpath = "//input[@placeholder='Search by brands']")
     WebElement brandInput;
-    public void addBrandFilter(String brand) throws InterruptedException {
-        plusIconBrand.click();
-        brandInput.sendKeys(brand);
-        driver.findElement(By.xpath("//div[text()='"+brand+"']")).click();
+    public void addBrandFilter(String choice,String filter) throws InterruptedException {
+        driver.findElement(By.xpath(String.format(filterPlusIcon,filter))).click();
+        //brandInput.sendKeys(choice);
+        driver.findElement(By.xpath("//div[text()='"+choice+"']")).click();
         Thread.sleep(3000);
     }
 
@@ -161,4 +162,17 @@ public class WebProductListPage extends WebBasePage {
     public String successMsg(){
         return successMsg.getText();
     }
+
+    @FindBy(xpath = "//span[@class='ProductDescription__newDiscountPercent']")
+    List<WebElement> discountList;
+    public boolean isDiscountFilterApplied(){
+        for(WebElement discount : discountList){
+            int value = Integer.parseInt(discount.getText().substring(0,2));
+            if(value<50 || value>70){
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

@@ -44,9 +44,9 @@ public class ProductListSteps {
         Assert.assertTrue(productListPage.isPriceHighToLowSorted());
     }
 
-    @When("user selects filter by brand {string}")
-    public void userSelectsFilterByBrand(String key) throws InterruptedException {
-        productListPage.addBrandFilter(ConfigReader.getConfigValue(key));
+    @When("user selects filter by {string} {string}")
+    public void userSelectsFilterByBrand(String filterType,String key) throws InterruptedException {
+        productListPage.addBrandFilter(ConfigReader.getConfigValue(key),filterType);
     }
 
     @Then("verify filter {string} is applied")
@@ -92,5 +92,10 @@ public class ProductListSteps {
     @Then("verify {string} is displayed")
     public void verifyIsDisplayed(String text) {
         Assert.assertEquals(text,productListPage.successMsg());
+    }
+
+    @Then("verify filter {string} is applied to all products")
+    public void verifyFilterIsAppliedToAllProducts(String filter) {
+        Assert.assertTrue(productListPage.isDiscountFilterApplied());
     }
 }
