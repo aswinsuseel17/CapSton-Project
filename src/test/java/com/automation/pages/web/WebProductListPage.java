@@ -4,6 +4,7 @@ package com.automation.pages.web;
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
@@ -57,6 +58,13 @@ public class WebProductListPage extends WebBasePage {
         Thread.sleep(2000);
     }
 
+
+    public void sortPriceLowToHigh() throws InterruptedException {
+        Select sortBy = new Select(sortByBtn);
+        sortBy.selectByValue("price-asc");
+        Thread.sleep(2000);
+    }
+
     @FindBy(xpath = "//div[@class='ProductDescription__discount ProductDescription__priceHolder']/h3")
     List<WebElement> priceList;
     public boolean isPriceHighToLowSorted(){
@@ -71,6 +79,23 @@ public class WebProductListPage extends WebBasePage {
         List<Long> copyPriceList = new ArrayList<>(newPriceList);
         Collections.sort(copyPriceList);
         Collections.reverse(copyPriceList);
+
+        return newPriceList.equals(copyPriceList);
+
+    }
+
+    public boolean isPriceLowToHighSorted(){
+
+        List<Long> newPriceList = new ArrayList<>();
+
+        for(WebElement price : priceList){
+            String str = price.getText();
+            newPriceList.add(Long.valueOf(str.substring(1)));
+
+        }
+        List<Long> copyPriceList = new ArrayList<>(newPriceList);
+        Collections.reverse(copyPriceList);
+        Collections.sort(copyPriceList);
 
         return newPriceList.equals(copyPriceList);
 
@@ -175,4 +200,24 @@ public class WebProductListPage extends WebBasePage {
         return true;
     }
 
+
+
+    @FindBy(css = ".ProductModule__base")
+    List<WebElement> productCardList;
+    @FindBy(xpath = "//div[@class='Image__base Image__baseScroll']/img")
+    List<WebElement> imageList;
+    @FindBy(className = "ProductModule__arrowBoxTwo")
+    WebElement rightArrow;
+    String link1;
+    public void clickRightArrow(){
+        link1 = imageList.get(0).getAttribute("src");
+        Actions actions = new Actions(driver);
+        actions.moveToElement(productCardList.get(0)).pause(1000).build().perform();
+        actions.moveToElement(rightArrow).pause(1000).click().build().perform();
+    }
+
+    public boolean verifyImage(){
+        String link2 = imageList.get(0).getAttribute("src");
+        return (!link1.equals(link2));
+    }
 }
