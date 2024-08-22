@@ -1,6 +1,8 @@
 package com.automation.steps;
 
-import com.automation.pages.website.HomePage;
+import com.automation.pages.interfaces.HomePage;
+import com.automation.pages.mobile.MobileHomePage;
+import com.automation.pages.web.WebHomePage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
@@ -9,7 +11,12 @@ public class HomeSteps {
     HomePage homePage ;
 
     public HomeSteps(){
-
+        if(ConfigReader.getConfigValue("platform").equals("Web")){
+            homePage=new WebHomePage();
+        }
+        else{
+            homePage = new MobileHomePage();
+        }
     }
 
 
@@ -36,7 +43,12 @@ public class HomeSteps {
 
     @When("user search an item {string} in search bar")
     public void userSearchAnItemInSearchBar(String key) {
-        homePage.searchItem(ConfigReader.getConfigValue(key));
+        if(key.contains(".")) {
+            homePage.searchItem(ConfigReader.getConfigValue(key));
+        }
+        else{
+            homePage.searchItem(key);
+        }
     }
 
 

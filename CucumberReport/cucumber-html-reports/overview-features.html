@@ -50,9 +50,9 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                90,
-                3,
-                8,
+                134,
+                0,
+                0,
                 0,
                 0
             ],
@@ -93,7 +93,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 101) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 134) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -106,8 +106,8 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                9,
-                3
+                17,
+                0
             ],
             backgroundColor: [
                 "#00B000",
@@ -143,7 +143,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 12) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 17) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -157,7 +157,7 @@ $(document).ready(function() {
         datasets: [{
             data: [
                    4,
-                   1
+                   0
                ],
                backgroundColor: [
                 "#00B000",
@@ -190,7 +190,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 5) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 4) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -233,7 +233,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>CucumberAutomation</td>
               <td>1</td>
-            <td>21 Aug 2024, 10:51</td>
+            <td>22 Aug 2024, 10:14</td>
     </tr>
   </tbody>
 </table>
@@ -328,54 +328,20 @@ $(document).ready(function() {
 
   <tbody>
           <tr>
-        <td class="tagname"><a href="report-feature_file-src-test-resources-features-Search-feature.html">Validate Brand Selection functionality</a></td>
+        <td class="tagname"><a href="report-feature_file-src-test-resources-features-Cart-feature.html">Validate cart page functionalities</a></td>
         
-        <td      class="passed"    >24</td>
+        <td      class="passed"    >40</td>
         <td >0</td>
         <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">24</td>
-
-        <td  class="passed"    >4</td>
-        <td >0</td>
-        <td class="total">4</td>
-
-        <td class="duration" data-value="181954719300">3m 1s 954ms</td>
-        <td class="passed">Passed</td>
-      </tr>
-          <tr>
-        <td class="tagname"><a href="report-feature_file-src-test-resources-features-Cart-feature.html">Validate cart page functionality</a></td>
-        
-        <td      class="passed"    >29</td>
-        <td      class="failed"    >3</td>
-        <td     class="skipped"   >8</td>
         <td >0</td>
         <td >0</td>
         <td class="total">40</td>
 
+        <td  class="passed"    >3</td>
         <td >0</td>
-        <td  class="failed"    >3</td>
         <td class="total">3</td>
 
-        <td class="duration" data-value="197745244400">3m 17s 745ms</td>
-        <td class="failed">Failed</td>
-      </tr>
-          <tr>
-        <td class="tagname"><a href="report-feature_file-src-test-resources-features-Filter-feature.html">Validate filter functionality</a></td>
-        
-        <td      class="passed"    >6</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">6</td>
-
-        <td  class="passed"    >1</td>
-        <td >0</td>
-        <td class="total">1</td>
-
-        <td class="duration" data-value="59671911900">59s 671ms</td>
+        <td class="duration" data-value="108769113900">1m 48s 769ms</td>
         <td class="passed">Passed</td>
       </tr>
           <tr>
@@ -392,58 +358,75 @@ $(document).ready(function() {
         <td >0</td>
         <td class="total">3</td>
 
-        <td class="duration" data-value="167372028400">2m 47s 372ms</td>
+        <td class="duration" data-value="97789534400">1m 37s 789ms</td>
         <td class="passed">Passed</td>
       </tr>
           <tr>
-        <td class="tagname"><a href="report-feature_file-src-test-resources-features-Sort-feature.html">Validate sorting functionality</a></td>
+        <td class="tagname"><a href="report-feature_file-src-test-resources-features-ProductList-feature.html">Validate product list page functionalities</a></td>
         
-        <td      class="passed"    >6</td>
+        <td      class="passed"    >21</td>
         <td >0</td>
         <td >0</td>
         <td >0</td>
         <td >0</td>
-        <td class="total">6</td>
+        <td class="total">21</td>
 
-        <td  class="passed"    >1</td>
+        <td  class="passed"    >3</td>
         <td >0</td>
-        <td class="total">1</td>
+        <td class="total">3</td>
 
-        <td class="duration" data-value="109826749000">1m 49s 826ms</td>
+        <td class="duration" data-value="66605732000">1m 6s 605ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="report-feature_file-src-test-resources-features-Search-feature.html">Validate search functionalities</a></td>
+        
+        <td      class="passed"    >48</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">48</td>
+
+        <td  class="passed"    >8</td>
+        <td >0</td>
+        <td class="total">8</td>
+
+        <td class="duration" data-value="151529247500">2m 31s 529ms</td>
         <td class="passed">Passed</td>
       </tr>
       </tbody>
 
   <tfoot class="total">
     <tr>
-      <td>5</td>
-            <td>90</td>
-      <td>3</td>
-      <td>8</td>
+      <td>4</td>
+            <td>134</td>
       <td>0</td>
       <td>0</td>
-      <td>101</td>
+      <td>0</td>
+      <td>0</td>
+      <td>134</td>
 
-      <td>9</td>
-      <td>3</td>
-      <td>12</td>
+      <td>17</td>
+      <td>0</td>
+      <td>17</td>
 
-      <td class="duration">11m 56s 570ms</td>
+      <td class="duration">7m 4s 693ms</td>
       <td></td>
     </tr>
     <tr>
       <td></td>
-            <td>89.11%</td>
-      <td>2.97%</td>
-      <td>7.92%</td>
+            <td>100.00%</td>
+      <td>0.00%</td>
+      <td>0.00%</td>
       <td>0.00%</td>
       <td>0.00%</td>
       <td></td>
-      <td>75.00%</td>
-      <td>25.00%</td>
+      <td>100.00%</td>
+      <td>0.00%</td>
       <td></td>
       <td></td>
-      <td>80.00%</td>
+      <td>100.00%</td>
     </tr>
   </tfoot>
 </table>

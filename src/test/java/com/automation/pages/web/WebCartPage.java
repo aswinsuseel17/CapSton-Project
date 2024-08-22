@@ -1,11 +1,12 @@
-package com.automation.pages.website;
+package com.automation.pages.web;
 
+import com.automation.pages.interfaces.CartPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class CartPage extends BasePage {
+public class WebCartPage extends WebBasePage implements CartPage {
 
     @FindBy(css = ".CartPage__myBag")
     WebElement myBagHeader;

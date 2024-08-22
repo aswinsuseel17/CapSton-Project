@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.pages.website.ProductListPage;
+import com.automation.pages.web.WebProductListPage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class ProductListSteps {
-    ProductListPage productListPage = new ProductListPage();
+    WebProductListPage productListPage = new WebProductListPage();
 
     @Then("verify whether product {string} list page is displayed")
     public void verifyWhetherProductListPageIsDisplayed(String key) {
@@ -25,7 +25,12 @@ public class ProductListSteps {
 
     @Then("verify {string} listing page is displayed")
     public void verifyHeadsetListingPageIsDisplayed(String key) {
-        Assert.assertTrue(productListPage.isItemHeadingDisplayed(ConfigReader.getConfigValue(key)));
+        if(key.contains(".")) {
+            Assert.assertTrue(productListPage.isItemHeadingDisplayed(ConfigReader.getConfigValue(key)));
+        }
+        else{
+            Assert.assertTrue(productListPage.isItemHeadingDisplayed(key));
+        }
         Assert.assertTrue(productListPage.isProductListPageDisplayed());
     }
 
@@ -62,5 +67,30 @@ public class ProductListSteps {
     @Then("verify similar products listing page is displayed")
     public void verifySimilarProductsListingPageIsDisplayed() {
         Assert.assertTrue(productListPage.isSimilarProductsDisplayed());
+    }
+
+    @When("user clicks give feedback button")
+    public void userClicksGiveFeedbackButton() {
+        productListPage.clickFeedBack();
+    }
+
+    @Then("verify feedback form is displayed")
+    public void verifyFeedbackFormIsDisplayed() {
+        Assert.assertTrue(productListPage.isFeedBackPageDisplayed());
+    }
+
+    @And("user enters feedback and click next")
+    public void userEntersFeedbackAndClickNext() {
+        productListPage.enterFeedBack();
+    }
+
+    @When("user enters text and clicks submit")
+    public void userEntersTextAndClicksSubmit() {
+        productListPage.submitFeedBack();
+    }
+
+    @Then("verify {string} is displayed")
+    public void verifyIsDisplayed(String text) {
+        Assert.assertEquals(text,productListPage.successMsg());
     }
 }

@@ -1,4 +1,5 @@
-Feature: Validate cart page functionality
+Feature: Validate cart page functionalities
+
   Background:
     Given user opens website
     Then verify user is on homepage

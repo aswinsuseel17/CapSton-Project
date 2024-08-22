@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.pages.website.ProductDetailPage;
+import com.automation.pages.web.WebProductDetailPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,7 +8,7 @@ import org.junit.Assert;
 
 public class ProductDetailSteps {
 
-    ProductDetailPage productDetailPage = new ProductDetailPage();
+    WebProductDetailPage productDetailPage = new WebProductDetailPage();
 
     @Then("verify whether product detail page is displayed")
     public void verifyWhetherProductDetailPageIsDisplayed() {

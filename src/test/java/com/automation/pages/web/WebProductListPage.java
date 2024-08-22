@@ -1,7 +1,6 @@
-package com.automation.pages.website;
+package com.automation.pages.web;
 
 
-import com.automation.pages.website.BasePage;
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-public class ProductListPage extends BasePage {
+public class WebProductListPage extends WebBasePage {
 
     @FindBy(css = ".SelectBoxDesktop__boxIconLeft")
     WebElement sortByText;
@@ -124,5 +123,42 @@ public class ProductListPage extends BasePage {
     WebElement similarProductsHeading;
     public boolean isSimilarProductsDisplayed(){
         return similarProductsHeading.isDisplayed();
+    }
+
+    @FindBy(xpath = "//div[@class='FeedbackExperienceWidget__line2']/strong")
+    WebElement giveFeedBackBtn;
+    public void clickFeedBack(){
+        giveFeedBackBtn.click();
+    }
+
+    @FindBy(css = ".FeedbackExperienceForm__next_box")
+    WebElement nextButton;
+    public boolean isFeedBackPageDisplayed(){
+        return nextButton.isDisplayed();
+    }
+
+    @FindBy(xpath = "//div[@class='FeedbackExperienceForm__emojis'][3]")
+    List<WebElement> feedBackSmiley;
+
+    public void enterFeedBack(){
+        for(WebElement smiley:feedBackSmiley){
+            smiley.click();
+        }
+        nextButton.click();
+    }
+
+    @FindBy(className = "FeedbackExperienceForm__feedback_box")
+    WebElement textInput;
+    @FindBy(xpath = "//div[text()='Submit']")
+    WebElement submitButton;
+    public void submitFeedBack(){
+        textInput.sendKeys(ConfigReader.getConfigValue("text"));
+        submitButton.click();
+    }
+
+    @FindBy(className = "feedbackExperienceSubmitMessage__thankyouText")
+    WebElement successMsg;
+    public String successMsg(){
+        return successMsg.getText();
     }
 }

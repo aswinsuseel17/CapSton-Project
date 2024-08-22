@@ -13,9 +13,8 @@ Feature: Validate product detail page functionalities
     Then verify product info is displayed
 
   Scenario: Verify user can visit store
-      When user clicks visit store button
-      Then verify whether product "brand.name" list page is displayed
-
+    When user clicks visit store button
+    Then verify whether product "brand.name" list page is displayed
 
   Scenario: Verify user can view similar products
     When user clicks similar products icon from product image
