@@ -39,8 +39,8 @@ public class ProductListSteps {
         productListPage.sortPriceHighToLow();
     }
 
-    @Then("verify whether product list is sorted")
-    public void verifyWhetherProductListIsSorted() {
+    @Then("verify whether product list is sorted high to low")
+    public void verifyWhetherProductListIsSortedHighToLow() {
         Assert.assertTrue(productListPage.isPriceHighToLowSorted());
     }
 
@@ -92,5 +92,25 @@ public class ProductListSteps {
     @Then("verify {string} is displayed")
     public void verifyIsDisplayed(String text) {
         Assert.assertEquals(text,productListPage.successMsg());
+    }
+
+    @And("user sort price low to high")
+    public void userSortPriceLowToHigh() throws InterruptedException {
+        productListPage.sortPriceLowToHigh();
+    }
+
+    @Then("verify whether product list is sorted low to high")
+    public void verifyWhetherProductListIsSortedLowToHigh() {
+        Assert.assertTrue(productListPage.isPriceLowToHighSorted());
+    }
+
+    @When("user click right shift arrow")
+    public void userClickRightShiftArrow() {
+        productListPage.clickRightArrow();
+    }
+
+    @Then("verify image is changing")
+    public void verifyImageIsChanging() {
+        Assert.assertTrue(productListPage.verifyImage());
     }
 }

@@ -77,7 +77,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>CucumberAutomation</td>
               <td>1</td>
-            <td>21 Aug 2024, 15:09</td>
+            <td>22 Aug 2024, 12:41</td>
     </tr>
   </tbody>
 </table>
@@ -117,7 +117,7 @@ $(document).ready(function() {
 <div class="element">
       <div class="indention">
       <b>Feature:</b>
-      <a href="report-feature_file-src-test-resources-features-ProductDetail-feature.html">Validate product detail page functionalities</a>
+      <a href="report-feature_file-src-test-resources-features-Cart-feature.html">Validate cart page functionalities</a>
     </div>
   
   
@@ -129,7 +129,7 @@ $(document).ready(function() {
     
 <div class="brief failed">
   <span class="keyword indention">Scenario</span>
-  <span class="name">Verify user can view more product info</span>
+  <span class="name">Verify user can alter quantity and size from the cart</span>
   
 
        <i class="chevron fa fa-fw"></i>
@@ -159,7 +159,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
                           <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
                         
-  <span class="lead-duration duration">3s 666ms</span>
+  <span class="lead-duration duration">2s 194ms</span>
 
           </div>
 
@@ -190,15 +190,52 @@ $(document).ready(function() {
   <div id="steps-3" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">When</span>
-  <span class="name">user clicks more product info</span>
+  <span class="name">user changes the size and quantity of the item</span>
   
-  <span class="lead-duration duration">134ms</span>
+  <span class="lead-duration duration">2s 609ms</span>
 
   </div>
 
         
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-4">
+          <a>Error message</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details">
+        <pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;SizeSelector__child&quot;&gt;...&lt;/div&gt; is not clickable at point (556, 295). Other element would receive the click: &lt;div class=&quot;SizeSelector__child&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=127.0.6533.120)
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b134d149ffbcc75d5661ea055dd398be, clickElement {id=f.4C5C524725FCBBCE2ED6EBFD86B440D2.d.3080BCFB7CF434A98B6CDBF58EF2AC93.e.233}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.120, chrome: {chromedriverVersion: 127.0.6533.119 (bdef6783a05..., userDataDir: C:\Users\280660\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64933}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64933/devtoo..., se:cdpVersion: 127.0.6533.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (b134d149ffbcc75d5661ea055dd398be)] -&gt; xpath: //div[@class='SizeSelector__grid']/child::div[@class='SizeSelector__child']]
+Session ID: b134d149ffbcc75d5661ea055dd398be
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at com.automation.pages.web.WebCartPage.changeSizeAndQuantity(WebCartPage.java:33)
+	at com.automation.steps.CartSteps.userChangesTheSizeAndQuantityOfTheItem(CartSteps.java:32)
+	at &#10045;.user changes the size and quantity of the item(file:///C:/Users/280660/IdeaProjects/CapSton-Project/src/test/resources/features/Cart.feature:20)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
         
@@ -211,32 +248,15 @@ $(document).ready(function() {
       </div>
           <div class="step">
         
-<div class="brief failed">
+<div class="brief skipped">
   <span class="keyword indention">Then</span>
-  <span class="name">verify product info is displayed</span>
+  <span class="name">verify the size &quot;item.size&quot; and quantity is updated</span>
   
-  <span class="lead-duration duration">519ms</span>
+  <span class="lead-duration duration">000ms</span>
 
   </div>
 
         
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-4">
-          <a>Error message</a>
-      </div>
-      <div id="msg-4" class="collapse collapsable-details">
-        <pre>java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at com.automation.steps.ProductDetailSteps.verifyProductInfoIsDisplayed(ProductDetailSteps.java:47)
-	at &#10045;.verify product info is displayed(file:///C:/UST_Java/CapstonProject/src/test/resources/features/ProductDetail.feature:13)
-</pre>
-      </div>
-    </div>
-  </div>
 
 
         
@@ -271,7 +291,7 @@ $(document).ready(function() {
             <span class="keyword indention">After</span>
                           <span class="location name">com.automation.steps.Hooks.tearDown(io.cucumber.java.Scenario)</span>
                         
-  <span class="lead-duration duration">1s 236ms</span>
+  <span class="lead-duration duration">759ms</span>
 
           </div>
 
@@ -283,13 +303,737 @@ $(document).ready(function() {
                 <div class="embedding indention">
         <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
       <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_-2034396954.png" target="_blank">
+      <a href="embeddings/embedding_733275491.png" target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-6" class="collapse collapsable-details">
       <span class="embedding-content">
-        <img src="embeddings/embedding_-2034396954.png">
+        <img src="embeddings/embedding_733275491.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+        </div>
+          </div>
+  </div>
+
+  </div>
+</div>
+
+                      
+<div class="element">
+      <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_file-src-test-resources-features-Cart-feature.html">Validate cart page functionalities</a>
+    </div>
+  
+  
+<div class="tags indention">
+  </div>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-7">
+    
+<div class="brief failed">
+  <span class="keyword indention">Background</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-7" class="collapse collapsable-details  in ">
+    
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-8">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-8" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">user opens website</span>
+  
+  <span class="lead-duration duration">6s 635ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on homepage</span>
+  
+  <span class="lead-duration duration">187ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user search an item &quot;search.cart&quot; in search bar</span>
+  
+  <span class="lead-duration duration">222ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify &quot;search.cart&quot; listing page is displayed</span>
+  
+  <span class="lead-duration duration">1s 508ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user clicks on the first product</span>
+  
+  <span class="lead-duration duration">231ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify whether product detail page is displayed</span>
+  
+  <span class="lead-duration duration">914ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief failed">
+  <span class="keyword indention">And</span>
+  <span class="name">user selects size &quot;item.size&quot; of the product</span>
+  
+  <span class="lead-duration duration">1s 717ms</span>
+
+  </div>
+
+        
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-9">
+          <a>Error message</a>
+      </div>
+      <div id="msg-9" class="collapse collapsable-details">
+        <pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;SizeSelectNewPdp__base&quot; id=&quot;pdpSize-XS&quot;&gt;...&lt;/div&gt; is not clickable at point (689, 520). Other element would receive the click: &lt;div class=&quot;ShareLinkComponent__share-btn&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=127.0.6533.120)
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cbfc2a256eb6f784d47552c6634795b8, clickElement {id=f.BDBEB7E01A197887C68D363EC04F57AA.d.E0ECA4592CAB8505267FB0B8CCB73C45.e.189}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.120, chrome: {chromedriverVersion: 127.0.6533.119 (bdef6783a05..., userDataDir: C:\Users\280660\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65264}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65264/devtoo..., se:cdpVersion: 127.0.6533.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (cbfc2a256eb6f784d47552c6634795b8)] -&gt; xpath: //div[@class='SizeSelectNewPdp__base']]
+Session ID: cbfc2a256eb6f784d47552c6634795b8
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at com.automation.pages.web.WebProductDetailPage.selectSize(WebProductDetailPage.java:36)
+	at com.automation.steps.ProductDetailSteps.userSelectsSizeOfTheProduct(ProductDetailSteps.java:36)
+	at &#10045;.user selects size &quot;item.size&quot; of the product(file:///C:/Users/280660/IdeaProjects/CapSton-Project/src/test/resources/features/Cart.feature:10)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user clicks add to cart button</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify cart count is &quot;1&quot;</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user click cart icon</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on cart page</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+
+  </div>
+</div>
+
+                      
+<div class="element">
+      <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_file-src-test-resources-features-Cart-feature.html">Validate cart page functionalities</a>
+    </div>
+  
+  
+<div class="tags indention">
+  </div>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-10">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">Verify user can remove item from the cart</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-10" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-11">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-11" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">2s 742ms</span>
+
+          </div>
+
+                      
+
+          
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-12">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-12" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">When</span>
+  <span class="name">user clicks on remove button</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify the item is removed from the cart</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">When</span>
+  <span class="name">user clicks continue shopping button</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is in home page</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+  <div class="inner-level hooks-after">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-13">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="after-13" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+                          <span class="location name">com.automation.steps.Hooks.tearDown(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">707ms</span>
+
+          </div>
+
+                      
+
+          
+          
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-14" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_64514047.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-14" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_64514047.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+        </div>
+          </div>
+  </div>
+
+  </div>
+</div>
+
+                      
+<div class="element">
+      <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_file-src-test-resources-features-ProductDetail-feature.html">Validate product detail page functionalities</a>
+    </div>
+  
+  
+<div class="tags indention">
+  </div>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-15">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">Verify user can view more product info</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-15" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-16">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-16" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">2s 302ms</span>
+
+          </div>
+
+                      
+
+          
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-17">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-17" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user clicks more product info</span>
+  
+  <span class="lead-duration duration">295ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief failed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify product info is displayed</span>
+  
+  <span class="lead-duration duration">403ms</span>
+
+  </div>
+
+        
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-18">
+          <a>Error message</a>
+      </div>
+      <div id="msg-18" class="collapse collapsable-details">
+        <pre>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.automation.steps.ProductDetailSteps.verifyProductInfoIsDisplayed(ProductDetailSteps.java:47)
+	at &#10045;.verify product info is displayed(file:///C:/Users/280660/IdeaProjects/CapSton-Project/src/test/resources/features/ProductDetail.feature:13)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+  <div class="inner-level hooks-after">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-19">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="after-19" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+                          <span class="location name">com.automation.steps.Hooks.tearDown(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">694ms</span>
+
+          </div>
+
+                      
+
+          
+          
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-20" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_209433352.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-20" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_209433352.png">
       </span>
     </div>
   </div>
