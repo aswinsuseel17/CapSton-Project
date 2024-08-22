@@ -1,8 +1,8 @@
 package com.automation.steps;
 
 import com.automation.pages.interfaces.HomePage;
-import com.automation.pages.mobileApplication.MobileHomePage;
-import com.automation.pages.website.WebHomePage;
+import com.automation.pages.mobile.MobileHomePage;
+import com.automation.pages.web.WebHomePage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.*;
 import org.junit.Assert;

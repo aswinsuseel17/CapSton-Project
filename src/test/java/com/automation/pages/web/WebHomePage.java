@@ -1,4 +1,4 @@
-package com.automation.pages.website;
+package com.automation.pages.web;
 
 
 import com.automation.pages.interfaces.HomePage;

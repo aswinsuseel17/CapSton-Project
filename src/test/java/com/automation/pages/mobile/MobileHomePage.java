@@ -1,4 +1,4 @@
-package com.automation.pages.mobileApplication;
+package com.automation.pages.mobile;
 
 import com.automation.pages.interfaces.HomePage;
 import org.openqa.selenium.WebElement;

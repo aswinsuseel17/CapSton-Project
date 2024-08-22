@@ -1,8 +1,8 @@
 package com.automation.steps;
 
 import com.automation.pages.interfaces.CartPage;
-import com.automation.pages.mobileApplication.MobileCartPage;
-import com.automation.pages.website.WebCartPage;
+import com.automation.pages.mobile.MobileCartPage;
+import com.automation.pages.web.WebCartPage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
