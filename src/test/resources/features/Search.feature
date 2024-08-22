@@ -35,6 +35,3 @@ Feature: Validate search functionalities
     | Bedsheet  |
     | Chair     |
     | Bags      |
-
-
-

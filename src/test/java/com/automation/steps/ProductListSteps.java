@@ -25,10 +25,9 @@ public class ProductListSteps {
 
     @Then("verify {string} listing page is displayed")
     public void verifyHeadsetListingPageIsDisplayed(String key) {
-        if(key.contains(".")) {
+        if (key.contains(".")) {
             Assert.assertTrue(productListPage.isItemHeadingDisplayed(ConfigReader.getConfigValue(key)));
-        }
-        else{
+        } else {
             Assert.assertTrue(productListPage.isItemHeadingDisplayed(key));
         }
         Assert.assertTrue(productListPage.isProductListPageDisplayed());
@@ -45,8 +44,8 @@ public class ProductListSteps {
     }
 
     @When("user selects filter by {string} {string}")
-    public void userSelectsFilterByBrand(String filterType,String key) throws InterruptedException {
-        productListPage.addBrandFilter(ConfigReader.getConfigValue(key),filterType);
+    public void userSelectsFilterByBrand(String filterType, String key) throws InterruptedException {
+        productListPage.addBrandFilter(ConfigReader.getConfigValue(key), filterType);
     }
 
     @Then("verify filter {string} is applied")
@@ -91,7 +90,7 @@ public class ProductListSteps {
 
     @Then("verify {string} is displayed")
     public void verifyIsDisplayed(String text) {
-        Assert.assertEquals(text,productListPage.successMsg());
+        Assert.assertEquals(text, productListPage.successMsg());
     }
 
     @And("user sort price low to high")

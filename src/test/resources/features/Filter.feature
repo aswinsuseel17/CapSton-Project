@@ -10,7 +10,6 @@ Feature: Validate filter functionality
     When user selects filter by "Brand" "filter.brand"
     Then verify filter "filter.brand" is applied
 
-
   Scenario: Verify user can filter product list as per a discount percentage
     When user selects filter by "Discount" "filter.percent"
     Then verify filter "filter.percent" is applied to all products
