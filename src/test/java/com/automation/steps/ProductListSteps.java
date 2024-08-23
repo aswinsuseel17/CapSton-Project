@@ -12,11 +12,10 @@ import org.junit.Assert;
 public class ProductListSteps {
     ProductListPage productListPage;
 
-    public ProductListSteps(){
-        if(ConfigReader.getConfigValue("platform").equals("Web")){
-            productListPage=new WebProductListPage();
-        }
-        else{
+    public ProductListSteps() {
+        if (ConfigReader.getConfigValue("platform").equals("Web")) {
+            productListPage = new WebProductListPage();
+        } else {
             productListPage = new MobileProductListPage();
         }
     }

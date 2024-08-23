@@ -10,43 +10,49 @@ import java.util.List;
 public class WebProductDetailPage extends WebBasePage implements ProductDetailPage {
     @FindBy(xpath = "//div[@itemprop='name']")
     WebElement productName;
-    public boolean isTheClickedProductDisplayed(){
+
+    public boolean isTheClickedProductDisplayed() {
         return productName.getText().equals(ConfigReader.getConfigValue("product.name"));
     }
 
     @FindBy(xpath = "//button[text()='Add To Bag']")
     WebElement addToCartBtn;
-    public void clickAddToCart(){
+
+    public void clickAddToCart() {
         addToCartBtn.click();
     }
 
     @FindBy(css = ".DesktopHeader__cartCount")
     WebElement cartCount;
-    public String verifyCartCount(){
+
+    public String verifyCartCount() {
         return cartCount.getText();
     }
 
-    public void clickCartIcon(){
+    public void clickCartIcon() {
         cartCount.click();
     }
 
     @FindBy(xpath = "//div[@class='SizeSelectNewPdp__base']")
     List<WebElement> sizeList;
-    public void selectSize(String key){
-        ConfigReader.setConfigValue(key,sizeList.get(0).getText());
+
+    public void selectSize(String key) {
+        ConfigReader.setConfigValue(key, sizeList.get(0).getText());
 //        sizeList.get(0).click();
         javascriptExecutorClick(sizeList.get(0));
     }
 
     @FindBy(className = "ProductDescriptionPage__moreProductInfoHead")
     WebElement moreProductInfo;
-    public void clickMoreProductInfo(){
+
+    public void clickMoreProductInfo() {
         javascriptExecutorClick(moreProductInfo);
     }
 
     @FindBy(css = ".MoreProductInfoComponent__header")
     WebElement productInfoHeading;
-    public boolean isProductInfoDisplayed(){
+
+    public boolean isProductInfoDisplayed() {
         return productInfoHeading.isDisplayed();
     }
 
@@ -54,26 +60,30 @@ public class WebProductDetailPage extends WebBasePage implements ProductDetailPa
     WebElement visitStoreBtn;
     @FindBy(xpath = "//button[@class='ProductDescriptionPage__visitStore']/preceding-sibling::div[2]")
     WebElement brandName;
-    public void clickVisitStore(){
-        ConfigReader.setConfigValue("brand.name",brandName.getText());
+
+    public void clickVisitStore() {
+        ConfigReader.setConfigValue("brand.name", brandName.getText());
         javascriptExecutorClick(visitStoreBtn);
     }
 
     @FindBy(id = "pg-similar-icon")
     WebElement similarProductsIcon;
-    public void clickSimilarProductsIcon(){
+
+    public void clickSimilarProductsIcon() {
         similarProductsIcon.click();
     }
 
     @FindBy(className = "CarouselWithControls__viewAllBtn")
     WebElement viewAllProductsBtn;
-    public void clickViewAllProducts(){
+
+    public void clickViewAllProducts() {
         viewAllProductsBtn.click();
     }
 
     @FindBy(css = ".Toast__textHolder")
     WebElement successMsg;
-    public String isSuccessMsgDisplayed(){
+
+    public String isSuccessMsgDisplayed() {
         return successMsg.getText();
     }
 }

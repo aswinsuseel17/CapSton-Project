@@ -12,11 +12,11 @@ import org.junit.Assert;
 public class ProductDetailSteps {
 
     ProductDetailPage productDetailPage;
-    public ProductDetailSteps(){
-        if(ConfigReader.getConfigValue("platform").equals("Web")){
-            productDetailPage=new WebProductDetailPage();
-        }
-        else{
+
+    public ProductDetailSteps() {
+        if (ConfigReader.getConfigValue("platform").equals("Web")) {
+            productDetailPage = new WebProductDetailPage();
+        } else {
             productDetailPage = new MobileProductDetailPage();
         }
     }
@@ -34,7 +34,7 @@ public class ProductDetailSteps {
 
     @Then("verify cart count is {string}")
     public void verifyCartCountIs(String count) {
-        Assert.assertEquals(count,productDetailPage.verifyCartCount());
+        Assert.assertEquals(count, productDetailPage.verifyCartCount());
     }
 
     @And("user click cart icon")
@@ -76,6 +76,6 @@ public class ProductDetailSteps {
 
     @Then("verify text {string} is displayed")
     public void verifyTextIsDisplayed(String text) {
-        Assert.assertEquals(text,productDetailPage.isSuccessMsgDisplayed());
+        Assert.assertEquals(text, productDetailPage.isSuccessMsgDisplayed());
     }
 }

@@ -46,12 +46,4 @@ public class MobileHomePage extends MobileBasePage implements HomePage {
 
     }
 
-    @Override
-    public boolean isDisplayed(WebElement element) {
-        try {
-            return element.isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
-    }
 }
