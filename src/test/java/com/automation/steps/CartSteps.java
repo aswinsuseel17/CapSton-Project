@@ -13,18 +13,17 @@ public class CartSteps {
 
     CartPage cartPage;
 
-    public CartSteps(){
-        if(ConfigReader.getConfigValue("platform").equals("Web")){
-            cartPage=new WebCartPage();
-        }
-        else{
+    public CartSteps() {
+        if (ConfigReader.getConfigValue("platform").equals("Web")) {
+            cartPage = new WebCartPage();
+        } else {
             cartPage = new MobileCartPage();
         }
     }
 
     @And("verify cart contain the correct item")
     public void verifyCartContainTheCorrectItem() {
-        Assert.assertEquals(ConfigReader.getConfigValue("product.name"),cartPage.cartProductTitle());
+        Assert.assertEquals(ConfigReader.getConfigValue("product.name"), cartPage.cartProductTitle());
     }
 
     @When("user changes the size and quantity of the item")

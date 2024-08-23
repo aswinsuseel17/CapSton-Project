@@ -9,13 +9,14 @@ import io.cucumber.java.Scenario;
 
 public class Hooks {
     @Before
-    public void setUp(Scenario scenario){
-        DriverManager.createDriver();
+    public void setUp(Scenario scenario) {
         ConfigReader.initConfig();
+        DriverManager.createDriver();
         ReportManager.initReport(scenario);
     }
+
     @After
-    public void tearDown(Scenario scenario){
+    public void tearDown(Scenario scenario) {
         ReportManager.attachScreenshot(scenario);
         DriverManager.getDriver().quit();
     }

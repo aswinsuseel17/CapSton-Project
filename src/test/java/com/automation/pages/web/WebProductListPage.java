@@ -58,7 +58,7 @@ public class WebProductListPage extends WebBasePage implements ProductListPage {
     @FindBy(className = "SelectBoxDesktop__hideSelect")
     WebElement sortByBtn;
 
-    public void sortPriceHighToLow()  {
+    public void sortPriceHighToLow() {
         Select sortBy = new Select(sortByBtn);
         sortBy.selectByValue("price-desc");
         try {
@@ -120,7 +120,7 @@ public class WebProductListPage extends WebBasePage implements ProductListPage {
     @FindBy(xpath = "//input[@placeholder='Search by brands']")
     WebElement brandInput;
 
-    public void addBrandFilter(String choice, String filter)  {
+    public void addBrandFilter(String choice, String filter) {
         driver.findElement(By.xpath(String.format(filterPlusIcon, filter))).click();
         //brandInput.sendKeys(choice);
         driver.findElement(By.xpath("//div[text()='" + choice + "']")).click();

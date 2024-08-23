@@ -8,13 +8,12 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 
 public class HomeSteps {
-    HomePage homePage ;
+    HomePage homePage;
 
-    public HomeSteps(){
-        if(ConfigReader.getConfigValue("platform").equals("Web")){
-            homePage=new WebHomePage();
-        }
-        else{
+    public HomeSteps() {
+        if (ConfigReader.getConfigValue("platform").equals("Web")) {
+            homePage = new WebHomePage();
+        } else {
             homePage = new MobileHomePage();
         }
     }
@@ -43,10 +42,9 @@ public class HomeSteps {
 
     @When("user search an item {string} in search bar")
     public void userSearchAnItemInSearchBar(String key) {
-        if(key.contains(".")) {
+        if (key.contains(".")) {
             homePage.searchItem(ConfigReader.getConfigValue(key));
-        }
-        else{
+        } else {
             homePage.searchItem(key);
         }
     }
