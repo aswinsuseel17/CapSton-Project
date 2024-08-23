@@ -54,4 +54,12 @@ public class MobileHomePage extends MobileBasePage implements HomePage {
             return false;
         }
     }
+
+    public void clickTataLuxury(){
+    }
+
+    @Override
+    public boolean isLuxuryPageTitleDisplayed() {
+        return false;
+    }
 }

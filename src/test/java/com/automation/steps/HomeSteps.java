@@ -56,4 +56,14 @@ public class HomeSteps {
     public void verifyUserIsInHomePage() {
         homePage.isHomePageDisplayed();
     }
+
+    @When("user clicks tata cliq luxury from home page")
+    public void userClicksTataCliqLuxuryFromHomePage() {
+        homePage.clickTataLuxury();
+    }
+
+    @Then("verify tata cliq luxury site is displayed")
+    public void verifyTataCliqLuxurySiteIsDisplayed() {
+        Assert.assertTrue(homePage.isLuxuryPageTitleDisplayed());
+    }
 }

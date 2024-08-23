@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.Set;
+
 public class WebHomePage extends WebBasePage implements HomePage {
 
     @Override
@@ -89,4 +91,24 @@ public class WebHomePage extends WebBasePage implements HomePage {
             return false;
         }
     }
+
+    @FindBy(css = ".DesktopHeader__luxeryTab")
+    WebElement tataLuxury;
+    public void clickTataLuxury(){
+        tataLuxury.click();
+        String originalHandle = driver.getWindowHandle();
+        Set<String> windows = driver.getWindowHandles();
+        for(String window : windows){
+            if(!originalHandle.equals(window)){
+                driver.switchTo().window(window);
+            }
+        }
+    }
+
+    @FindBy(xpath = "//li[@class='active']/a")
+    WebElement heading;
+    public boolean isLuxuryPageTitleDisplayed(){
+        return heading.isDisplayed();
+    }
+
 }

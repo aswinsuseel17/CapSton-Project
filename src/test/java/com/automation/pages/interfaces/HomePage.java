@@ -16,4 +16,8 @@ public interface HomePage {
     void searchItem(String configValue);
 
     boolean isDisplayed(WebElement element);
+
+    void clickTataLuxury();
+
+    boolean isLuxuryPageTitleDisplayed();
 }
