@@ -39,4 +39,11 @@ public class MobileCartPage extends MobileBasePage implements CartPage {
     public String cartProductTitle() {
         return "";
     }
+
+    @Override
+    public boolean calculateTotal() {
+
+        return false;
+
+    }
 }

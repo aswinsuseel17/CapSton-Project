@@ -14,4 +14,6 @@ public interface CartPage {
     void clickContinueShopping();
 
     String cartProductTitle();
+
+    boolean calculateTotal();
 }

@@ -45,4 +45,13 @@ public class MobileHomePage extends MobileBasePage implements HomePage {
     public void searchItem(String configValue) {
 
     }
+
+    @Override
+    public boolean isDisplayed(WebElement element) {
+        try {
+            return element.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

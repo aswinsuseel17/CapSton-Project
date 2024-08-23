@@ -62,4 +62,23 @@ public class WebCartPage extends WebBasePage implements CartPage {
     public void clickContinueShopping(){
         continueShoppingButton.click();
     }
+
+    @FindBy(xpath = "//div[@class='CartItemForDesktop__informationTextWithBolder']")
+    List<WebElement> productPrice;
+    @FindBy(xpath = "//div[@class='DesktopCheckout__shippingCharge' and not(./span)]")
+    WebElement processingPrice;
+    @FindBy(xpath = "//div[@class='DesktopCheckout__price']")
+    WebElement totalAmount;
+    public boolean calculateTotal(){
+        double expectedTotal =0;
+        for(WebElement price : productPrice){
+            double itemPrice = Double.parseDouble(price.getText().substring(1));
+            expectedTotal +=itemPrice;
+        }
+        double processingFee = Double.parseDouble(processingPrice.getText().split("₹")[2]);
+        expectedTotal += processingFee;
+        double actualTotal = Double.parseDouble(totalAmount.getText().substring(1));
+        return expectedTotal == actualTotal;
+    }
 }
+

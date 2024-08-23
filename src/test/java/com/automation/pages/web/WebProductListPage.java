@@ -1,6 +1,7 @@
 package com.automation.pages.web;
 
 
+import com.automation.pages.interfaces.ProductListPage;
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-public class WebProductListPage extends WebBasePage {
+public class WebProductListPage extends WebBasePage implements ProductListPage {
 
     @FindBy(css = ".SelectBoxDesktop__boxIconLeft")
     WebElement sortByText;
@@ -57,17 +58,25 @@ public class WebProductListPage extends WebBasePage {
     @FindBy(className = "SelectBoxDesktop__hideSelect")
     WebElement sortByBtn;
 
-    public void sortPriceHighToLow() throws InterruptedException {
+    public void sortPriceHighToLow()  {
         Select sortBy = new Select(sortByBtn);
         sortBy.selectByValue("price-desc");
-        Thread.sleep(2000);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
-    public void sortPriceLowToHigh() throws InterruptedException {
+    public void sortPriceLowToHigh() {
         Select sortBy = new Select(sortByBtn);
         sortBy.selectByValue("price-asc");
-        Thread.sleep(2000);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FindBy(xpath = "//div[@class='ProductDescription__discount ProductDescription__priceHolder']/h3")
@@ -107,17 +116,19 @@ public class WebProductListPage extends WebBasePage {
 
     }
 
-    //    @FindBy(xpath = "//div[text()='Brand']/following-sibling::div")
-//    WebElement plusIconBrand;
     String filterPlusIcon = "//div[text()='%s']/following-sibling::div";
     @FindBy(xpath = "//input[@placeholder='Search by brands']")
     WebElement brandInput;
 
-    public void addBrandFilter(String choice, String filter) throws InterruptedException {
+    public void addBrandFilter(String choice, String filter)  {
         driver.findElement(By.xpath(String.format(filterPlusIcon, filter))).click();
         //brandInput.sendKeys(choice);
         driver.findElement(By.xpath("//div[text()='" + choice + "']")).click();
-        Thread.sleep(3000);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FindBy(xpath = "//div[@class='ProductDescription__header']")

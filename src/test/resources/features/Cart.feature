@@ -25,3 +25,9 @@ Feature: Validate cart page functionalities
     Then verify the item is removed from the cart
     When user clicks continue shopping button
     Then verify user is in home page
+
+  Scenario: Verify the total amount in cart page
+    Then verify cart contain the correct item
+    And verify the total amount is correct
+    When user increase quantity then verify
+    And verify the total amount is correct

@@ -1,12 +1,13 @@
 package com.automation.pages.web;
 
+import com.automation.pages.interfaces.ProductDetailPage;
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class WebProductDetailPage extends WebBasePage {
+public class WebProductDetailPage extends WebBasePage implements ProductDetailPage {
     @FindBy(xpath = "//div[@itemprop='name']")
     WebElement productName;
     public boolean isTheClickedProductDisplayed(){

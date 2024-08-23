@@ -56,4 +56,13 @@ public class CartSteps {
     public void userClicksContinueShoppingButton() {
         cartPage.clickContinueShopping();
     }
+
+    @And("verify the total amount is correct")
+    public void verifyTheTotalAmountIsCorrect() {
+        Assert.assertTrue(cartPage.calculateTotal());
+    }
+
+    @When("user increase quantity then verify")
+    public void userIncreaseQuantityThenVerify() {
+    }
 }

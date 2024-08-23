@@ -1,5 +1,7 @@
 package com.automation.pages.interfaces;
 
+import org.openqa.selenium.WebElement;
+
 public interface HomePage {
     void openWebsite();
 
@@ -12,4 +14,6 @@ public interface HomePage {
     void searchCategory();
 
     void searchItem(String configValue);
+
+    boolean isDisplayed(WebElement element);
 }

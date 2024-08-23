@@ -17,9 +17,21 @@ public class WebHomePage extends WebBasePage implements HomePage {
 
     @FindBy(id = "wzrk-cancel")
     WebElement askMeLater;
+    @FindBy(xpath = "//div[@class='wzrkPPwarp']/a")
+    WebElement popUpClose;
+    @FindBy(id = "wiz-iframe")
+    WebElement popupIframe;
     @Override
     public void closePopUp(){
+        if(isDisplayed(popupIframe)){
+
+            driver.switchTo().frame(popupIframe);
+            popUpClose.click();
+            driver.switchTo().defaultContent();
+
+        }
         askMeLater.click();
+
     }
 
     @FindBy(className = "BannerDesktop__base")
@@ -69,5 +81,12 @@ public class WebHomePage extends WebBasePage implements HomePage {
         action.keyDown(Keys.ENTER).keyUp(Keys.ENTER).build().perform();
     }
 
-
+    @Override
+    public boolean isDisplayed(WebElement element) {
+        try {
+            return element.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

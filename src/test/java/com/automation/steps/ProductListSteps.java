@@ -1,5 +1,7 @@
 package com.automation.steps;
 
+import com.automation.pages.interfaces.ProductListPage;
+import com.automation.pages.mobile.MobileProductListPage;
 import com.automation.pages.web.WebProductListPage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.And;
@@ -8,7 +10,16 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class ProductListSteps {
-    WebProductListPage productListPage = new WebProductListPage();
+    ProductListPage productListPage;
+
+    public ProductListSteps(){
+        if(ConfigReader.getConfigValue("platform").equals("Web")){
+            productListPage=new WebProductListPage();
+        }
+        else{
+            productListPage = new MobileProductListPage();
+        }
+    }
 
     @Then("verify whether product {string} list page is displayed")
     public void verifyWhetherProductListPageIsDisplayed(String key) {

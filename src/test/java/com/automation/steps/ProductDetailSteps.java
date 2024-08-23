@@ -1,6 +1,9 @@
 package com.automation.steps;
 
+import com.automation.pages.interfaces.ProductDetailPage;
+import com.automation.pages.mobile.MobileProductDetailPage;
 import com.automation.pages.web.WebProductDetailPage;
+import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,7 +11,15 @@ import org.junit.Assert;
 
 public class ProductDetailSteps {
 
-    WebProductDetailPage productDetailPage = new WebProductDetailPage();
+    ProductDetailPage productDetailPage;
+    public ProductDetailSteps(){
+        if(ConfigReader.getConfigValue("platform").equals("Web")){
+            productDetailPage=new WebProductDetailPage();
+        }
+        else{
+            productDetailPage = new MobileProductDetailPage();
+        }
+    }
 
     @Then("verify whether product detail page is displayed")
     public void verifyWhetherProductDetailPageIsDisplayed() {
