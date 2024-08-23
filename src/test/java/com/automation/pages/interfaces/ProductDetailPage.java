@@ -21,4 +21,6 @@ public interface ProductDetailPage {
     void clickSimilarProductsIcon();
 
     void clickViewAllProducts();
+
+    String isSuccessMsgDisplayed();
 }

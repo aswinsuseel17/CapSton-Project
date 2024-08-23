@@ -53,4 +53,9 @@ public class MobileProductDetailPage extends MobileBasePage implements ProductDe
     public void clickViewAllProducts() {
 
     }
+
+    @Override
+    public String isSuccessMsgDisplayed() {
+        return "";
+    }
 }
