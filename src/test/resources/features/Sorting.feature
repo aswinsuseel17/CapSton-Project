@@ -13,4 +13,3 @@ Feature: Validate sorting functionality
   Scenario: Verify user can sort price low to high
     And user sort price low to high
     Then verify whether product list is sorted low to high
-

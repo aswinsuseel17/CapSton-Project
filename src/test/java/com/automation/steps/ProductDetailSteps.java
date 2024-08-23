@@ -74,4 +74,8 @@ public class ProductDetailSteps {
     }
 
 
+    @Then("verify text {string} is displayed")
+    public void verifyTextIsDisplayed(String text) {
+        Assert.assertEquals(text,productDetailPage.isSuccessMsgDisplayed());
+    }
 }

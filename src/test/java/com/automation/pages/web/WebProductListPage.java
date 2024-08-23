@@ -84,14 +84,14 @@ public class WebProductListPage extends WebBasePage implements ProductListPage {
 
     public boolean isPriceHighToLowSorted() {
 
-        List<Long> newPriceList = new ArrayList<>();
+        List<Double> newPriceList = new ArrayList<>();
 
         for (WebElement price : priceList) {
             String str = price.getText();
-            newPriceList.add(Long.valueOf(str.substring(1)));
+            newPriceList.add(Double.valueOf(str.substring(1)));
 
         }
-        List<Long> copyPriceList = new ArrayList<>(newPriceList);
+        List<Double> copyPriceList = new ArrayList<>(newPriceList);
         Collections.sort(copyPriceList);
         Collections.reverse(copyPriceList);
 
@@ -101,14 +101,14 @@ public class WebProductListPage extends WebBasePage implements ProductListPage {
 
     public boolean isPriceLowToHighSorted() {
 
-        List<Long> newPriceList = new ArrayList<>();
+        List<Double> newPriceList = new ArrayList<>();
 
         for (WebElement price : priceList) {
             String str = price.getText();
-            newPriceList.add(Long.valueOf(str.substring(1)));
+            newPriceList.add(Double.valueOf(str.substring(1)));
 
         }
-        List<Long> copyPriceList = new ArrayList<>(newPriceList);
+        List<Double> copyPriceList = new ArrayList<>(newPriceList);
         Collections.reverse(copyPriceList);
         Collections.sort(copyPriceList);
 

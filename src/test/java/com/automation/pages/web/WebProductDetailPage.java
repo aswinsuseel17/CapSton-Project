@@ -34,7 +34,8 @@ public class WebProductDetailPage extends WebBasePage implements ProductDetailPa
     List<WebElement> sizeList;
     public void selectSize(String key){
         ConfigReader.setConfigValue(key,sizeList.get(0).getText());
-        sizeList.get(0).click();
+//        sizeList.get(0).click();
+        javascriptExecutorClick(sizeList.get(0));
     }
 
     @FindBy(className = "ProductDescriptionPage__moreProductInfoHead")
@@ -68,5 +69,11 @@ public class WebProductDetailPage extends WebBasePage implements ProductDetailPa
     WebElement viewAllProductsBtn;
     public void clickViewAllProducts(){
         viewAllProductsBtn.click();
+    }
+
+    @FindBy(css = ".Toast__textHolder")
+    WebElement successMsg;
+    public String isSuccessMsgDisplayed(){
+        return successMsg.getText();
     }
 }
