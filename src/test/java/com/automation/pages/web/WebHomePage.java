@@ -8,10 +8,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.Set;
+
 public class WebHomePage extends WebBasePage implements HomePage {
 
     @Override
-    public void openWebsite(){
+    public void openWebsite() {
         driver.get(ConfigReader.getConfigValue("website.url"));
     }
 
@@ -22,8 +24,8 @@ public class WebHomePage extends WebBasePage implements HomePage {
     @FindBy(id = "wiz-iframe")
     WebElement popupIframe;
     @Override
-    public void closePopUp(){
-        if(isDisplayed(popupIframe)){
+    public void closePopUp() {
+        if (isDisplayed(popupIframe)) {
 
             driver.switchTo().frame(popupIframe);
             popUpClose.click();
@@ -37,7 +39,7 @@ public class WebHomePage extends WebBasePage implements HomePage {
     @FindBy(className = "BannerDesktop__base")
     WebElement bannerBase;
     @Override
-    public boolean isHomePageDisplayed(){
+    public boolean isHomePageDisplayed() {
 
         return bannerBase.isDisplayed();
     }
@@ -49,7 +51,7 @@ public class WebHomePage extends WebBasePage implements HomePage {
     @FindBy(xpath = "(//div[@class='BrandImage__imageHolder']/div)[1]")
     WebElement adidasSelect;
     @Override
-    public void chooseBrand(){
+    public void chooseBrand() {
         Actions action = new Actions(driver);
         action.moveToElement(brandsMenu).pause(1000).build().perform();
         action.moveToElement(footwearSelect).pause(1000).click(adidasSelect).build().perform();
@@ -64,7 +66,7 @@ public class WebHomePage extends WebBasePage implements HomePage {
     @FindBy(xpath = "//a[text()='Shirts']")
     WebElement shirtsLink;
     @Override
-    public void searchCategory(){
+    public void searchCategory() {
         Actions actions = new Actions(driver);
         actions.moveToElement(categoryMenu).pause(1000).build().perform();
         actions.moveToElement(mensFashionOption).pause(1000).build().perform();
@@ -75,7 +77,7 @@ public class WebHomePage extends WebBasePage implements HomePage {
     @FindBy(id = "search-text-input")
     WebElement searchBox;
     @Override
-    public void searchItem(String item){
+    public void searchItem(String item) {
         searchBox.sendKeys(item);
         Actions action = new Actions(driver);
         action.keyDown(Keys.ENTER).keyUp(Keys.ENTER).build().perform();
@@ -89,4 +91,24 @@ public class WebHomePage extends WebBasePage implements HomePage {
             return false;
         }
     }
+
+    @FindBy(css = ".DesktopHeader__luxeryTab")
+    WebElement tataLuxury;
+    public void clickTataLuxury(){
+        tataLuxury.click();
+        String originalHandle = driver.getWindowHandle();
+        Set<String> windows = driver.getWindowHandles();
+        for(String window : windows){
+            if(!originalHandle.equals(window)){
+                driver.switchTo().window(window);
+            }
+        }
+    }
+
+    @FindBy(xpath = "//li[@class='active']/a")
+    WebElement heading;
+    public boolean isLuxuryPageTitleDisplayed(){
+        return heading.isDisplayed();
+    }
+
 }
